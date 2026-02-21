@@ -1,0 +1,45 @@
+{
+  "cost_model": {
+    "agents": {
+      "execution_per_hour": 0.5,
+      "decision_per_action": 0.01,
+      "memory_per_gb_per_day": 0.001
+    },
+    "mcp_servers": {
+      "startup_cost": 1.0,
+      "per_request": 0.1,
+      "memory_per_gb_per_day": 0.001
+    },
+    "tools": {
+      "per_invocation": 0.05,
+      "per_output_token": 0.0001
+    },
+    "tasks": {
+      "per_agent_hour": 0.5,
+      "tool_usage": "accumulated"
+    },
+    "storage": {
+      "per_gb_per_day": 0.001
+    }
+  },
+  "revenue_model": {
+    "mining": {
+      "kwh_to_egn": 1.0,
+      "efficiency": 0.95
+    },
+    "arbitrage": {
+      "percentage": 0.002
+    },
+    "staking": {
+      "daily_yield": 0.001
+    }
+  },
+  "perpetuity_allocation": {
+    "education": 0.05,
+    "fauna": 0.05,
+    "flora": 0.05,
+    "environment": 0.05,
+    "perpetuity_committee": 0.05
+  },
+  "last_updated": "2026-02-06T15:55:00Z"
+}

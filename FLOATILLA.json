@@ -1,0 +1,130 @@
+{
+  "floatilla": {
+    "version": "1.0.0",
+    "codename": "EXTERNAL_COMMUNICATION_NETWORK",
+    "description": "Alexandria external communication network - bridging Guacamole, Porta-Mundi, and ADAM",
+    "status": "OPERATIONAL",
+    "created_at": "2026-02-07T00:00:00Z"
+  },
+
+  "playlists": {
+    "main_bridge": {
+      "name": "Main Guacamole-Porta-Mundi-ADAM Bridge",
+      "description": "Primary communication path for all external connections",
+      "status": "ACTIVE",
+      "items": [
+        {
+          "id": "guacamole_gateway",
+          "name": "Guacamole Gateway",
+          "type": "terminal_access",
+          "protocol": "guacamole",
+          "endpoint": "http://localhost/guacamole/",
+          "port": 8080,
+          "secured_by": "porta-mundi",
+          "status": "CONNECTED"
+        },
+        {
+          "id": "porta_mundi_security",
+          "name": "Porta-Mundi Security Layer",
+          "type": "security_gateway",
+          "protocol": "https",
+          "endpoint": "porta-mundi-security",
+          "port": 6000,
+          "description": "Zero-trust security enforcement, RBAC, audit logging",
+          "modules": ["zangetsu", "chapel_xvi", "aegis", "sentinelle"],
+          "status": "OPERATIONAL"
+        },
+        {
+          "id": "adam_orchestration",
+          "name": "ADAM Multi-Agent Orchestration",
+          "type": "agent_controller",
+          "protocol": "websocket",
+          "endpoint": "http://localhost:5004",
+          "port": 5004,
+          "description": "Agent Zero framework - multi-agent coordination",
+          "status": "RUNNING"
+        }
+      ]
+    },
+
+    "scouts_relay_network": {
+      "name": "Scout Outpost Relay Network",
+      "description": "Distributed intelligence gathering network - scouts act as relays for financial intelligence squad",
+      "status": "TODO_DEFINE_OUTPOST_LOCATIONS",
+      "items": []
+    }
+  },
+
+  "scouts": {
+    "OPERATIONAL_STRUCTURE": "TODO: DEFINE SCOUT OUTPOST LOCATIONS AND RELAY PROTOCOLS",
+    "example_outposts": {
+      "SCOUT_NASDAQ_ALPHA": {
+        "status": "TEMPORARY_PLACEHOLDER_AWAITING_CONFIG",
+        "location": "NEW_YORK_NASDAQ_FEED",
+        "purpose": "Financial intelligence gathering - market data, trends, anomalies",
+        "protocol": "TODO_PROTOCOL",
+        "relay_to": "central_agentic_node"
+      },
+      "SCOUT_NYSE_BETA": {
+        "status": "TEMPORARY_PLACEHOLDER_AWAITING_CONFIG",
+        "location": "NEW_YORK_NYSE_FEED",
+        "purpose": "Financial intelligence gathering - equity data",
+        "protocol": "TODO_PROTOCOL",
+        "relay_to": "central_agentic_node"
+      }
+    }
+  },
+
+  "network_topology": {
+    "description": "FLOATILLA Network Architecture",
+    "flow": [
+      "Scout Outposts (External Data Sources)",
+      "    ↓",
+      "Relay Network (Scout-to-Porta-Mundi)",
+      "    ↓",
+      "Porta-Mundi Security Gateway (Zangetsu + ChapelXVI)",
+      "    ↓",
+      "ADAM Orchestration (Agent Coordination)",
+      "    ↓",
+      "Guacamole Terminal Access / Anima Mundi UI"
+    ]
+  },
+
+  "connectivity": {
+    "guacamole": {
+      "role": "Terminal & Remote Access Interface",
+      "provides": ["RDP", "SSH", "VNC", "SFTP"],
+      "secured_by": "porta_mundi_security",
+      "status": "CONNECTED"
+    },
+    "porta_mundi": {
+      "role": "Security & Threat Detection Layer",
+      "provides": ["Zero-Trust RBAC", "Audit Logging", "Encryption", "Threat Detection"],
+      "protects": ["ADAM", "Scouts", "Agent Network"],
+      "status": "OPERATIONAL"
+    },
+    "adam": {
+      "role": "Agent Orchestration & Intelligence Processing",
+      "receives": ["Scout Data via Relay"],
+      "coordinates": ["Financial Intelligence Squad", "Agent Swarms"],
+      "outputs": ["Decisions", "Commands", "Insights"],
+      "status": "RUNNING"
+    }
+  },
+
+  "next_steps": {
+    "TODO_IMMEDIATE": [
+      "Define exact scout outpost locations (NASDAQ, NYSE, etc.) - stored in central_agentic config",
+      "Define relay protocol (REST API, gRPC, Message Queue, etc.)",
+      "Implement scout-to-Porta-Mundi encryption and authentication",
+      "Setup central_agentic_node as aggregation point",
+      "Deploy financial intelligence squad with proper RBAC roles"
+    ],
+    "TODO_LATER": [
+      "Add multi-region scout support for global coverage",
+      "Implement automatic scout health checking and failover",
+      "Create dashboard for scout network monitoring",
+      "Add data encryption in transit between scouts and central node"
+    ]
+  }
+}

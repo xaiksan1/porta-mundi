@@ -1,0 +1,166 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'porta-mundi-security-platform'
+    environment: 'production'
+
+rule_files:
+  - 'vault-alerts.yml'
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+      # Optional: Configure AlertManager for external notifications
+      # - static_configs:
+      #     - targets: ['alertmanager:9093']
+
+scrape_configs:
+  # ========== INFRASTRUCTURE ==========
+
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # ========== PORTA-MUNDI GATEWAY ==========
+
+  - job_name: 'porta-mundi-gateway'
+    static_configs:
+      - targets: ['localhost:8822']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  - job_name: 'guacd'
+    static_configs:
+      - targets: ['localhost:4822']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # ========== SECURITY MODULE 1: AEGIS ==========
+
+  - job_name: 'aegis-cryptography'
+    static_configs:
+      - targets: ['aegis:7000']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+    scrape_timeout: 5s
+
+  # ========== SECURITY MODULE 2: PHOENIX (Threat Detection) ==========
+
+  - job_name: 'phoenix-threat-detection'
+    static_configs:
+      - targets: ['phoenix:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+
+  # ========== SECURITY MODULE 3: AKER (Response & Recovery) ==========
+
+  - job_name: 'aker-response-recovery'
+    static_configs:
+      - targets: ['aker:8888']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+    scrape_timeout: 5s
+
+  # ========== SECURITY MODULE 4: ZANGETSU (AI Intelligence) ==========
+
+  - job_name: 'zangetsu-ai-intelligence'
+    static_configs:
+      - targets: ['zangetsu:7500']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+    scrape_timeout: 5s
+
+  # ========== SECURITY MODULE 5: SENTINELLE (Monitoring & Alerting) ==========
+
+  - job_name: 'sentinelle-monitoring-alerting'
+    static_configs:
+      - targets: ['sentinelle:9000']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+
+  # ========== SECURITY MODULE 6: CHAPEL XVI (Audit Logging) ==========
+
+  - job_name: 'chapel-xvi-audit-logging'
+    static_configs:
+      - targets: ['chapel-xvi:6000']
+    metrics_path: '/metrics'
+    scrape_interval: 20s
+    scrape_timeout: 10s
+
+  # ========== SECURITY MODULE 7: PAINT-SHOP (Visualization) ==========
+
+  - job_name: 'paint-shop-visualization'
+    static_configs:
+      - targets: ['paint-shop:5000']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+    scrape_timeout: 5s
+
+  # ========== SECURITY MODULE 8: ALEXA (Adaptive ML) ==========
+
+  - job_name: 'alexa-machine-learning'
+    static_configs:
+      - targets: ['alexa:8777']
+    metrics_path: '/metrics'
+    scrape_interval: 20s
+    scrape_timeout: 5s
+
+  # ========== SECURITY MODULE 9: KHEPER:NEXUS (Network Orchestration) ==========
+
+  - job_name: 'kheper-nexus-orchestration'
+    static_configs:
+      - targets: ['kheper-nexus:9999']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+
+  # ========== INFRASTRUCTURE SERVICES ==========
+
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  - job_name: 'timescaledb'
+    static_configs:
+      - targets: ['timescaledb:5432']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # ========== SUTURE DE CONTEXTE: VAULT MONITORING (Bearer Token Auth) ==========
+
+  - job_name: 'vault-monitor'
+    scheme: 'http'
+    metrics_path: '/v1/sys/metrics'
+    params:
+      format: ['prometheus']
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    bearer_token_file: '/etc/prometheus/secrets/aegis-vault-token'
+    static_configs:
+      - targets: ['vault:8200']
+        labels:
+          cluster_id: 'vault-cluster-686fc14b'
+          namespace: 'root'
+          security_level: '5'
+          axis: 'dk'  # Quaternionic axis label
+          suture_type: 'contexte'
+    metric_relabel_configs:
+      # Keep only vault_token_count for ethereal pressure monitoring
+      - source_labels: [__name__]
+        regex: 'vault_token_count'
+        action: 'keep'
+      # Add contexte labels for quaternionic classification
+      - source_labels: [__name__]
+        target_label: 'contexte'
+        replacement: 'vault-authentication'
+      # Label ethereal pressure level
+      - source_labels: [vault_token_count]
+        regex: '([0-9]+)'
+        target_label: 'pression_etheree'
+        replacement: 'moderate'

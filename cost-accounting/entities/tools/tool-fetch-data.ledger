@@ -1,0 +1,38 @@
+{
+  "entity_type": "tools",
+  "entity_id": "tool-fetch-data",
+  "total_spent": 6.0,
+  "total_earned": 0.0,
+  "transactions": [
+    {
+      "timestamp": "2026-02-07T22:02:18.797032Z",
+      "entity_type": "tool",
+      "entity_id": "tool-fetch-data",
+      "event": "invocation",
+      "invocations": 50,
+      "output_tokens": 5000,
+      "costs": {
+        "invocations": 2.5,
+        "output_tokens": 0.5
+      },
+      "total_egn": 3.0,
+      "hash": "4467cbf404bd110e"
+    },
+    {
+      "timestamp": "2026-02-08T12:24:55.716569Z",
+      "entity_type": "tool",
+      "entity_id": "tool-fetch-data",
+      "event": "invocation",
+      "invocations": 50,
+      "output_tokens": 5000,
+      "costs": {
+        "invocations": 2.5,
+        "output_tokens": 0.5
+      },
+      "total_egn": 3.0,
+      "hash": "4467cbf404bd110e"
+    }
+  ],
+  "net_balance": -6.0,
+  "last_updated": "2026-02-08T12:24:55.716978Z"
+}

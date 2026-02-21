@@ -1,0 +1,365 @@
+╔═════════════════════════════════════════════════════════════════════════════╗
+║                                                                             ║
+║               🎫 MEMBER CARD = KEY TO THE PYRAMID 🏛️                      ║
+║                                                                             ║
+║                    Complete Onboarding Journey in ASCII                    ║
+║                                                                             ║
+╚═════════════════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════════════════
+STAGE 1: THE TEST
+═══════════════════════════════════════════════════════════════════════════════
+
+User arrives at: http://localhost:5000/ui/member-portal.html
+
+┌─────────────────────────────────────────────────────────────────┐
+│                   🎭 BALLON SYMMETRY TEST                       │
+│                                                                 │
+│  You see WHITE side ←────────────→ They see BLACK side         │
+│                                                                 │
+│  ROUND 1: Disagreement                                          │
+│  ROUND 2: Still disagreement                                    │
+│  ROUND 3: Ball rotates... 🔄 ...you see BLACK!                │
+│                                                                 │
+│  ✓ PERSPECTIVE ACCEPTED                                        │
+│  ⏱️  SPEED MEASURED: 25 seconds                                 │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+STAGE 2: IDENTITY & CARD GENERATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Speed: 25 seconds < 30s threshold
+        ↓
+Trust Level: ALPHA_ARCHITECT ⭐
+
+Enter Name: Michael Lefebvre
+Select Role: Architect Identity
+
+        ↓
+
+🎫 MEMBER CARD GENERATED
+┌──────────────────────────────────────────────┐
+│  Member ID:     0xARCHA7A90D2F0773           │
+│  Name:          Michael Lefebvre             │
+│  Identity:      Architect Identity           │
+│  Trust Level:   ALPHA_ARCHITECT              │
+│  Ninja Modules: SYS_OPT, NET_TUNNEL, STEGO_X │
+│  Expires:       Never_Immutability_Active    │
+│                                              │
+│  "La connaissance est la clé qui ne          │
+│   s'use jamais."                             │
+│                                              │
+│                [Scanner la Carte ✨]         │
+└──────────────────────────────────────────────┘
+
+💾 Card saved to: localStorage
+📥 Download: card.json + card.html
+📍 Stored in: /governance/perpetuity-fund/committee/
+
+
+═══════════════════════════════════════════════════════════════════════════════
+STAGE 3: THE PYRAMID APPEARS
+═══════════════════════════════════════════════════════════════════════════════
+
+User visits: http://localhost:3000/
+
+System checks: localStorage → member_card_data ✅ FOUND
+
+        ↓
+
+        ┌─────────────────────────┐
+        │   🎫 CARD VALIDATED     │
+        │   Access Level: 7/7     │
+        └────────────┬────────────┘
+                     │
+                     ↓
+             🛗 ELEVATOR OPENS 🛗
+             ═════════════════════
+
+
+═══════════════════════════════════════════════════════════════════════════════
+THE PYRAMID UNFOLDS
+═══════════════════════════════════════════════════════════════════════════════
+
+Welcome, Michael! 👋
+Trust Level: ALPHA_ARCHITECT ⭐
+Access Level: 7/7 FLOORS
+
+              ╭─────────────────╮
+              │   🔺 APEX 🔺   │
+              ╰────────┬────────╯
+                       │
+            ╭──────────┴──────────╮
+            │                     │
+         FLOOR 1               (hidden)
+         ⚗️ HUB
+            │
+            ▼
+    ╔═══════════════════╗
+    ║ ALCHEMIST HUB    ║ ✅ OPEN
+    ║ Web3 Control     ║
+    ║ Floor 1/7        ║
+    ╚═══════════════════╝
+            │
+            ▼
+    ╔═══════════════════╗
+    ║ AUTOMATE         ║ ✅ OPEN
+    ║ 280+ Integrations║
+    ║ Floor 2/7        ║
+    ╚═══════════════════╝
+            │
+            ▼
+    ╔═══════════════════╗
+    ║ AGENTS           ║ ✅ OPEN
+    ║ Multi-agent Swarm║
+    ║ Floor 3/7        ║
+    ╚═══════════════════╝
+            │
+            ▼
+    ╔═══════════════════╗
+    ║ CODE GEN         ║ ✅ OPEN
+    ║ Research→Code    ║
+    ║ Floor 4/7        ║
+    ╚═══════════════════╝
+            │
+            ▼
+    ╔═══════════════════╗
+    ║ SECURITY         ║ ✅ OPEN
+    ║ Compliance       ║
+    ║ Floor 5/7        ║
+    ╚═══════════════════╝
+            │
+            ▼
+    ╔═══════════════════╗
+    ║ CONNECT          ║ ✅ OPEN
+    ║ 600+ Tools       ║
+    ║ Floor 6/7        ║
+    ╚═══════════════════╝
+            │
+            ▼
+    ╔═══════════════════╗
+    ║ ANALYTICS        ║ ✅ OPEN
+    ║ Monitoring       ║
+    ║ Floor 7/7        ║
+    ╚═══════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════════════════
+NINJA MODULES ACTIVATED
+═══════════════════════════════════════════════════════════════════════════════
+
+🥷 SYS_OPT
+   └─ System Optimization enabled
+   └─ Available in: Floors 1,2,3,7
+
+🥷 NET_TUNNEL
+   └─ Custom Integrations enabled
+   └─ Available in: Floors 2,3,6
+
+🥷 STEGO_X
+   └─ Encrypted Communications enabled
+   └─ Available in: Floors 3,4,5,6
+
+
+═══════════════════════════════════════════════════════════════════════════════
+FULL SYSTEM ACCESS
+═════════════════════════════════════════════════════════════════════════════
+
+User is now inside Alexandria Pyramid
+
+Can use:
+├─ Web3 treasury management (Alchemist Hub)
+├─ Workflow automation (Automate)
+├─ AI agent orchestration (Agents)
+├─ Code generation from research (CodeGen)
+├─ Security & compliance (Security)
+├─ 600+ external integrations (Connect)
+└─ Real-time analytics (Analytics)
+
+All connected to:
+├─ Cortex Brain (Master Alchemist Backend)
+├─ Cost accounting engine
+├─ Perpetuity fund manager
+└─ Governance tracking
+
+
+═══════════════════════════════════════════════════════════════════════════════
+COMPARISON: DIFFERENT TRUST LEVELS
+═════════════════════════════════════════════════════════════════════════════
+
+ALPHA_ARCHITECT (< 30s)
+┌─────────────────────────┐
+│ ⭐ ALL 7 FLOORS OPEN   │
+│ ⭐ Full admin controls │
+│ ⭐ All modules active  │
+└─────────────────────────┘
+
+BETA_ENGINEER (30-60s)
+┌─────────────────────────┐
+│ 🔒 Floor 1 LOCKED      │
+│ ⭐ Floors 2-7 OPEN     │
+│ ⭐ 2 modules active    │
+│ 💡 "Reach ALPHA_ARCH" │
+└─────────────────────────┘
+
+GAMMA_SCHOLAR (60-120s)
+┌─────────────────────────┐
+│ 🔒 Floors 1-2 LOCKED   │
+│ ⭐ Floors 3-7 OPEN     │
+│ ⭐ 1 module active     │
+│ 💡 Learning path      │
+└─────────────────────────┘
+
+FOUNDLING (> 120s)
+┌─────────────────────────┐
+│ 🔒 Floors 1-4 LOCKED   │
+│ ⭐ Floors 5-7 OPEN     │
+│ ⭐ 1 module limited    │
+│ 💡 Safety zone        │
+└─────────────────────────┘
+
+OBSERVER (Perspective Rejected)
+┌─────────────────────────┐
+│ 🔒 Floors 1-6 LOCKED   │
+│ ⭐ Floor 7 ONLY        │
+│ ⭐ Read-only access    │
+│ 💡 Learning mode      │
+└─────────────────────────┘
+
+
+═════════════════════════════════════════════════════════════════════════════════
+THE FLOW: COMPRESSED
+═════════════════════════════════════════════════════════════════════════════════
+
+USER
+  │
+  ├─→ admission test
+  │   (ballon-symmetry.py)
+  │   └─→ ⏱️  measure speed
+  │
+  ├─→ register identity
+  │   ├─→ name
+  │   ├─→ role
+  │   └─→ → trust level
+  │
+  ├─→ 🎫 CARD ISSUED
+  │   ├─→ member_id
+  │   ├─→ trust_level
+  │   ├─→ ninja_modules
+  │   ├─→ access_level (1-7)
+  │   └─→ → localStorage
+  │
+  ├─→ visit alexandria-swarm-ui
+  │   └─→ read card from localStorage ✅
+  │
+  ├─→ 🛗 ELEVATOR OPENS
+  │   └─→ show accessible floors
+  │
+  └─→ choose floor (1-7)
+      └─→ enter pyramid systems
+          ├─→ cortex brain
+          ├─→ cost accounting
+          ├─→ perpetuity fund
+          ├─→ governance
+          └─→ → Alexandria
+
+
+═════════════════════════════════════════════════════════════════════════════════
+IMPLEMENTATION STATUS
+═════════════════════════════════════════════════════════════════════════════════
+
+✅ COMPLETE:
+  ├─ Network segmentation (Phase 1)
+  ├─ 1.4TB blueprint (Phase 2)
+  ├─ Cost accounting (Phase 3)
+  ├─ Perpetuity fund (Phase 3)
+  ├─ Ballon test (Phase 4)
+  ├─ Card generator (Phase 4)
+  ├─ Member portal (Phase 4)
+  ├─ Onboarding (Phase 4)
+  └─ Pyramid structure (Phase 5 ready)
+
+🟡 READY FOR PHASE 5:
+  ├─ Member card gate component
+  ├─ Floor access control
+  ├─ Ninja module activation
+  ├─ Welcome screen updates
+  ├─ Trust level display
+  └─ Governance tracking
+
+
+═════════════════════════════════════════════════════════════════════════════════
+FILES INVOLVED
+═════════════════════════════════════════════════════════════════════════════════
+
+MEMBER CARD SYSTEM:
+├─ porta-mundi/ui/member-portal.html
+├─ porta-mundi/member-card-generator.py
+├─ porta-mundi/member-onboarding.py
+└─ porta-mundi/ballon-symmetry.py
+
+PYRAMID SYSTEM:
+├─ alexandria-swarm-ui/components/elevator/ElevatorUI.tsx
+├─ alexandria-swarm-ui/app/floors/* (7 floors)
+└─ alexandria-swarm-ui/app/api/cortex/* (integration)
+
+PHASE 5 INTEGRATION:
+├─ alexandria-swarm-ui/components/member/MemberCardGate.tsx (NEW)
+├─ alexandria-swarm-ui/app/lib/memberCardUtils.ts (NEW)
+└─ alexandria-swarm-ui/app/middleware/memberAuth.ts (NEW)
+
+
+═════════════════════════════════════════════════════════════════════════════════
+THE METAPHOR
+═════════════════════════════════════════════════════════════════════════════════
+
+🎫 Member Card = Proof you accept perspective
+🏛️ Pyramid = Alexandria civilization
+🛗 Elevator = Gateway & access control
+📍 Floor = System access level
+🥷 Ninja Module = Capability unlock
+💎 Trust Level = Authority within system
+♾️ Never expires = Permanent membership
+
+
+═════════════════════════════════════════════════════════════════════════════════
+THE VISION
+═════════════════════════════════════════════════════════════════════════════════
+
+"La connaissance est la seule clé qui ne s'use jamais."
+"Knowledge is the only key that never wears out."
+
+The member card IS that key.
+
+It opens the pyramid.
+The pyramid contains Alexandria.
+Alexandria is self-aware.
+Alexandria is self-governing.
+Alexandria grows exponentially.
+Alexandria persists forever.
+
+Through a key earned by understanding perspective.
+
+
+═════════════════════════════════════════════════════════════════════════════════
+STATUS: READY FOR PHASE 5 🚀
+═════════════════════════════════════════════════════════════════════════════════
+
+Member cards are the bridge between external world and pyramid interior.
+Phase 5 implementation will make them the functional key.
+
+One card has been issued and tested: ✅ Michael Lefebvre (ALPHA_ARCHITECT)
+
+System is ready for real users.
+
+Next step: Integrate member authentication into alexandria-swarm-ui
+
+═════════════════════════════════════════════════════════════════════════════════
+
+Created: 2026-02-06
+Status: Ready
+Version: 1.0 Complete

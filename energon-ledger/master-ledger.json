@@ -1,0 +1,17 @@
+{
+  "date": "2026-02-06",
+  "balance_egn": 3.595,
+  "pending_seal_egn": 0.52,
+  "sealed_to_blockchain_egn": 3.0087,
+  "hourly_generation_rate": 58.0,
+  "agent_count": 32,
+  "active_workers": 4,
+  "last_update": "2026-02-06T15:55:00Z",
+  "next_seal_scheduled": "2026-02-06T16:00:00Z",
+  "metadata": {
+    "schema_version": "1.0",
+    "encoding": "UTF-8",
+    "immutable": false,
+    "update_frequency": "1m"
+  }
+}

@@ -1,0 +1,197 @@
+groups:
+  - name: "vault-authentication-pressure"
+    interval: 30s
+    rules:
+      # ========== ETHEREAL PRESSURE LEVEL: ÉLEVÉE (High) ==========
+      - alert: VaultTokenPressureHigh
+        expr: |
+          vault_token_count{cluster_id="vault-cluster-686fc14b", axis="dk"} > 2000
+        for: 5m
+        labels:
+          severity: warning
+          contexte: "vault-authentication"
+          pression_level: "élevée"
+          module: "sentinelle"
+        annotations:
+          summary: "🟡 Vault Token Pressure High (Pression Éthérée Élevée)"
+          description: |
+            Token count in vault cluster {{ $labels.cluster_id }} has reached {{ $value }} tokens.
+            Ethereal pressure level is ÉLEVÉE (High).
+            Threshold: 2000 tokens
+            Current: {{ $value }}
+            Status: ⚠️ ELEVATED PRESSURE DETECTED
+          dashboard: "http://localhost:3011/d/vault-monitor"
+          action: "Review token lifecycle policies and consider token rotation"
+          quaternion: "dk"
+
+      # ========== ETHEREAL PRESSURE LEVEL: CRITIQUE (Critical) ==========
+      - alert: VaultTokenPressureCritical
+        expr: |
+          vault_token_count{cluster_id="vault-cluster-686fc14b", axis="dk"} > 5000
+        for: 2m
+        labels:
+          severity: critical
+          contexte: "vault-authentication"
+          pression_level: "critique"
+          module: "phoenix"
+        annotations:
+          summary: "🔴 CRITICAL: Vault Token Pressure Critical (Pression Éthérée Critique)"
+          description: |
+            ⚠️ CRITICAL ALERT ⚠️
+            Token count in vault cluster {{ $labels.cluster_id }} has reached {{ $value }} tokens.
+            Ethereal pressure level is CRITIQUE (Critical).
+            Threshold: 5000 tokens
+            Current: {{ $value }}
+            Status: 🚨 CRITICAL PRESSURE - IMMEDIATE ACTION REQUIRED
+          dashboard: "http://localhost:3011/d/vault-monitor"
+          action: "URGENT: Investigate token accumulation, revoke unused tokens, check for token leaks. Contact AEGIS module."
+          quaternion: "dk"
+
+      # ========== TOKEN GENERATION RATE ANOMALY ==========
+      - alert: VaultTokenGenerationAnomaly
+        expr: |
+          rate(vault_token_count{cluster_id="vault-cluster-686fc14b", axis="dk"}[5m]) > 0.02
+        for: 10m
+        labels:
+          severity: warning
+          contexte: "vault-authentication"
+          pression_level: "anomalous"
+          module: "phoenix"
+        annotations:
+          summary: "⚡ Vault Token Generation Rate Anomaly"
+          description: |
+            Token generation rate in cluster {{ $labels.cluster_id }} is {{ printf "%.4f" $value }} tokens/sec.
+            Possible authentication storm or credential leak detected.
+            Normal baseline: < 0.02 tokens/sec
+            Current rate: {{ printf "%.4f" $value }} tokens/sec
+            Detection confidence: HIGH
+          dashboard: "http://localhost:3011/d/vault-monitor"
+          action: |
+            1. Check authentication logs for suspicious patterns
+            2. Review active applications and service accounts
+            3. Verify token auth policies in AEGIS module
+            4. Enable PHOENIX threat detection for deeper analysis
+          quaternion: "dk"
+
+      # ========== TOKEN CLUSTER UNRESPONSIVE ==========
+      - alert: VaultClusterUnresponsive
+        expr: |
+          (rate(vault_token_count{cluster_id="vault-cluster-686fc14b", axis="dk"}[30m]) == 0)
+          and (vault_token_count > 0)
+        for: 15m
+        labels:
+          severity: critical
+          contexte: "vault-authentication"
+          pression_level: "frozen"
+          module: "sentinelle"
+        annotations:
+          summary: "❄️ Vault Cluster Appears Unresponsive"
+          description: |
+            No token count changes detected in cluster {{ $labels.cluster_id }} for 15 minutes.
+            Vault cluster may be unresponsive, stuck, or experiencing a deadlock.
+            Last known token count: {{ $value }}
+            Status: CLUSTER FROZEN - DIAGNOSTIC REQUIRED
+          dashboard: "http://localhost:3011/d/vault-monitor"
+          action: |
+            1. Check Vault service health: docker logs porta-mundi-vault
+            2. Verify network connectivity to vault:8200
+            3. Review Vault system logs for errors
+            4. Contact AKER module for recovery procedures
+          quaternion: "dk"
+
+      # ========== TOKEN COUNT DELTA THRESHOLD ==========
+      - alert: VaultTokenCountExcessiveDelta
+        expr: |
+          abs(delta(vault_token_count{cluster_id="vault-cluster-686fc14b", axis="dk"}[5m])) > 100
+        for: 3m
+        labels:
+          severity: warning
+          contexte: "vault-authentication"
+          pression_level: "unstable"
+          module: "phoenix"
+        annotations:
+          summary: "⚠️ Vault Token Count Excessive Change"
+          description: |
+            Token count in cluster {{ $labels.cluster_id }} changed by {{ printf "%.0f" $value }} tokens in last 5 minutes.
+            Threshold: ± 100 tokens
+            Current delta: {{ printf "%.0f" $value }} tokens
+            This indicates rapid token creation or revocation.
+          dashboard: "http://localhost:3011/d/vault-monitor"
+          action: |
+            1. Check for batch token operations in application logs
+            2. Review authentication service activity
+            3. Verify no runaway token generation processes
+            4. Monitor pressure levels closely
+          quaternion: "dk"
+
+      # ========== ETHEREAL PRESSURE APPROACHING MAXIMUM ==========
+      - alert: EtherealPressureApproachingMaximum
+        expr: |
+          (vault_token_count{cluster_id="vault-cluster-686fc14b", axis="dk"} / 10000) >= 0.8
+        for: 5m
+        labels:
+          severity: warning
+          contexte: "vault-authentication"
+          pression_level: "near_max"
+          module: "sentinelle"
+        annotations:
+          summary: "📈 Ethereal Pressure Approaching Maximum"
+          description: |
+            Vault cluster {{ $labels.cluster_id }} is at {{ printf "%.1f" ($value * 100) }}% capacity.
+            Threshold for intervention: 80%
+            Remaining capacity: {{ printf "%.1f" (100 - $value * 100) }}%
+            Architectural limit: 10000 tokens (quaternionic constraint)
+          dashboard: "http://localhost:3011/d/vault-monitor"
+          action: |
+            1. Begin token lifecycle review immediately
+            2. Identify long-lived tokens for rotation
+            3. Implement aggressive token cleanup policies
+            4. Prepare AKER recovery procedures
+            5. Notify cluster administrators
+          quaternion: "dk"
+
+  - name: "vault-authentication-security"
+    interval: 60s
+    rules:
+      # ========== VAULT METRICS UNAVAILABLE ==========
+      - alert: VaultMetricsUnavailable
+        expr: |
+          up{job="vault-monitor"} == 0
+        for: 5m
+        labels:
+          severity: critical
+          contexte: "vault-authentication"
+          module: "sentinelle"
+        annotations:
+          summary: "🔴 Vault Metrics Collection Failed"
+          description: |
+            Prometheus cannot reach Vault metrics endpoint at vault:8200/v1/sys/metrics.
+            Bearer token authentication or network connectivity may be compromised.
+            Duration: 5+ minutes
+          dashboard: "http://localhost:3011/d/vault-monitor"
+          action: |
+            1. Verify Vault service is running: docker ps | grep vault
+            2. Check network connectivity: docker network ls
+            3. Verify Bearer token file: ls -la /etc/prometheus/secrets/
+            4. Review Vault logs: docker logs porta-mundi-vault
+            5. Contact PHOENIX threat detection if unauthorized
+          quaternion: "dk"
+
+---
+
+# Recording Rules (Optional - for performance optimization)
+groups:
+  - name: "vault-recording-rules"
+    interval: 30s
+    rules:
+      - record: "vault:token_count:5m_avg"
+        expr: |
+          avg_over_time(vault_token_count{cluster_id="vault-cluster-686fc14b", axis="dk"}[5m])
+
+      - record: "vault:token_rate:5m"
+        expr: |
+          rate(vault_token_count{cluster_id="vault-cluster-686fc14b", axis="dk"}[5m])
+
+      - record: "vault:pressure_level:normalized"
+        expr: |
+          (vault_token_count{cluster_id="vault-cluster-686fc14b", axis="dk"} / 10000) * 100

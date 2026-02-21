@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexa | Infrastructure Orchestration | Porta-Mundi 🎯</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --bg: #030108;
+            --gate: #6d28d9;
+            --ti-accent: #10b981;
+            --alexa: #ec4899;
+            --gold: #d4af37;
+            --alert: #ef4444;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .mono { font-family: 'Fira Code', monospace; }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            backdrop-filter: blur(25px);
+        }
+
+        .glass-alexa {
+            background: rgba(236, 72, 153, 0.02);
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            backdrop-filter: blur(25px);
+        }
+
+        .active-status {
+            border-left: 4px solid var(--ti-accent);
+            background: rgba(16, 185, 129, 0.02);
+        }
+
+        .mission-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(236, 72, 153, 0.2);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--alexa);
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-running {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid var(--ti-accent);
+            color: var(--ti-accent);
+        }
+
+        .status-queued {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid #f59e0b;
+            color: #fbbf24;
+        }
+
+        .status-failed {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid var(--alert);
+            color: #fca5a5;
+        }
+
+        .status-completed {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid #3b82f6;
+            color: #93c5fd;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .loading-spinner {
+            border: 2px solid rgba(236, 72, 153, 0.2);
+            border-top: 2px solid var(--alexa);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .pulse-alexa {
+            animation: pulse-alexa 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-alexa {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .orchestration-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .orchestration-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--alexa), transparent);
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item.active {
+            opacity: 1;
+        }
+
+        .timeline-item.active::before {
+            background: var(--alexa);
+        }
+
+        .tab-button {
+            position: relative;
+            padding-bottom: 0.5rem;
+            color: #9ca3af;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tab-button.active {
+            color: var(--alexa);
+            border-bottom-color: var(--alexa);
+        }
+
+        .deployment-progress {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .deployment-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--alexa), var(--ti-accent));
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto space-y-6 relative">
+
+        <!-- HEADER -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-white/5 pb-8">
+            <div class="relative">
+                <div class="flex items-center gap-3 mb-2">
+                    <h1 class="text-4xl font-black italic tracking-tighter uppercase text-white leading-none">
+                        Alexa<span class="text-pink-500">Sys</span>
+                    </h1>
+                    <span class="px-3 py-1 bg-pink-500/10 border border-pink-500/30 rounded text-[10px] font-bold text-pink-400 uppercase tracking-[0.2em] pulse-alexa">
+                        Infrastructure Orchestration
+                    </span>
+                </div>
+                <p class="text-[10px] mono opacity-50 uppercase tracking-widest">> Unified Infrastructure | Terraform + Docker + Guacamole | PORTA-MUNDI INTEGRATED</p>
+            </div>
+
+            <div class="flex gap-3 flex-wrap">
+                <button onclick="toggleGuacamole()" class="glass-alexa px-4 py-2 rounded-lg text-sm font-bold text-pink-400 hover:text-pink-300 hover:border-pink-400 transition-all">
+                    🖥️ Guacamole Gateway
+                </button>
+                <button onclick="refreshStatus()" class="glass px-4 py-2 rounded-lg text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-all">
+                    🔄 Refresh Status
+                </button>
+            </div>
+        </header>
+
+        <!-- QUICK STATUS -->
+        <div class="glass-alexa p-6 rounded-[2.5rem] border-l-4 border-l-pink-500 space-y-4">
+            <div class="flex justify-between items-center">
+                <h2 class="text-[10px] font-black uppercase text-pink-400 tracking-[0.3em]">Infrastructure Orchestration Status</h2>
+                <div id="infra-status" class="text-[9px] font-bold text-pink-400 uppercase flex items-center gap-2">
+                    <span class="w-2 h-2 bg-pink-400 rounded-full pulse-alexa"></span>
+                    Initializing...
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
+                <div class="p-2 border border-white/5 rounded-lg text-center hover:border-pink-500/50 transition-all">
+                    <div class="text-[7px] opacity-40 uppercase">Terraform</div>
+                    <div id="tf-status" class="text-[10px] font-bold">⏳ Initializing</div>
+                </div>
+                <div class="p-2 border border-white/5 rounded-lg text-center hover:border-pink-500/50 transition-all">
+                    <div class="text-[7px] opacity-40 uppercase">Docker</div>
+                    <div id="docker-status" class="text-[10px] font-bold">⏳ Initializing</div>
+                </div>
+                <div class="p-2 border border-white/5 rounded-lg text-center hover:border-pink-500/50 transition-all">
+                    <div class="text-[7px] opacity-40 uppercase">Guacamole</div>
+                    <div id="guac-status" class="text-[10px] font-bold">⏳ Initializing</div>
+                </div>
+                <div class="p-2 border border-white/5 rounded-lg text-center hover:border-pink-500/50 transition-all">
+                    <div class="text-[7px] opacity-40 uppercase">OPA Policies</div>
+                    <div id="opa-status" class="text-[10px] font-bold">⏳ Initializing</div>
+                </div>
+                <div class="p-2 border border-white/5 rounded-lg text-center hover:border-pink-500/50 transition-all">
+                    <div class="text-[7px] opacity-40 uppercase">Vault (ChapelXVI)</div>
+                    <div id="vault-status" class="text-[10px] font-bold">🔒 Sealed</div>
+                </div>
+                <div class="p-2 border border-white/5 rounded-lg text-center border-pink-500/30 hover:border-pink-500/50 transition-all">
+                    <div class="text-[7px] text-pink-400 uppercase">Missions Queued</div>
+                    <div id="mission-count" class="text-[10px] font-bold text-pink-400">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- LEFT: ORCHESTRATION DASHBOARD -->
+            <div class="lg:col-span-2 space-y-6">
+
+                <!-- TABS -->
+                <div class="flex gap-6 border-b border-white/5 pb-4">
+                    <button onclick="switchTab('missions')" class="tab-button active" data-tab="missions">
+                        📋 Orchestration Missions
+                    </button>
+                    <button onclick="switchTab('deployments')" class="tab-button" data-tab="deployments">
+                        🚀 Active Deployments
+                    </button>
+                    <button onclick="switchTab('infrastructure')" class="tab-button" data-tab="infrastructure">
+                        🏗️ Infrastructure View
+                    </button>
+                </div>
+
+                <!-- TAB: MISSIONS -->
+                <div id="missions-tab" class="space-y-4 tab-content">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-sm font-bold uppercase text-pink-400">Available Missions</h3>
+                        <button onclick="createMission()" class="text-xs bg-pink-600/20 border border-pink-500 text-pink-400 px-3 py-1.5 rounded hover:bg-pink-600 transition-all">
+                            ➕ New Mission
+                        </button>
+                    </div>
+
+                    <div id="missions-list" class="space-y-3">
+                        <div class="mission-card glass-alexa p-4 rounded-xl">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-bold text-white">deploy-sentinelle</h4>
+                                    <p class="text-[9px] opacity-60 mono">security-perimeter-watch</p>
+                                </div>
+                                <span class="status-badge status-completed">Completed</span>
+                            </div>
+                            <div class="text-[9px] opacity-70 space-y-1">
+                                <div>✓ Build image</div>
+                                <div>✓ Push registry</div>
+                                <div>✓ Deploy K8s</div>
+                                <div>✓ Run tests</div>
+                            </div>
+                            <div class="mt-3 deployment-progress">
+                                <div class="deployment-progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="mission-card glass-alexa p-4 rounded-xl active-status">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-bold text-white">deploy-phoenix-monitoring</h4>
+                                    <p class="text-[9px] opacity-60 mono">observability-stack</p>
+                                </div>
+                                <span class="status-badge status-running">Running</span>
+                            </div>
+                            <div class="text-[9px] opacity-70 space-y-1">
+                                <div>✓ Build image</div>
+                                <div>⏳ Push registry (in progress)</div>
+                                <div>- Deploy K8s (pending)</div>
+                                <div>- Run tests (pending)</div>
+                            </div>
+                            <div class="mt-3 deployment-progress">
+                                <div class="deployment-progress-bar" style="width: 45%"></div>
+                            </div>
+                        </div>
+
+                        <div class="mission-card glass-alexa p-4 rounded-xl">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h4 class="font-bold text-white">scale-kubernetes-cluster</h4>
+                                    <p class="text-[9px] opacity-60 mono">infrastructure-scaling</p>
+                                </div>
+                                <span class="status-badge status-queued">Queued</span>
+                            </div>
+                            <div class="text-[9px] opacity-70">
+                                Waiting in mission queue. Will start after: deploy-phoenix-monitoring
+                            </div>
+                            <div class="mt-3 deployment-progress">
+                                <div class="deployment-progress-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: DEPLOYMENTS -->
+                <div id="deployments-tab" class="space-y-4 tab-content hidden">
+                    <h3 class="text-sm font-bold uppercase text-pink-400">Real-time Deployment Monitoring</h3>
+                    <div id="deployments-list" class="glass-alexa p-6 rounded-xl space-y-4">
+                        <div class="mono text-[9px] space-y-2 max-h-96 overflow-y-auto">
+                            <div class="text-emerald-400">[14:32:15] Starting: deploy-phoenix-monitoring</div>
+                            <div class="text-emerald-400">[14:32:18] ✓ Docker image built: phoenix:v2.1.0</div>
+                            <div class="text-emerald-400">[14:32:45] ✓ Image pushed to registry</div>
+                            <div class="text-yellow-400">[14:32:52] ⏳ Rolling out K8s deployment...</div>
+                            <div class="text-yellow-400">[14:33:10] ⏳ Waiting for pod readiness...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: INFRASTRUCTURE -->
+                <div id="infrastructure-tab" class="space-y-4 tab-content hidden">
+                    <h3 class="text-sm font-bold uppercase text-pink-400">Infrastructure Stack</h3>
+                    <div class="module-grid">
+                        <div class="glass-alexa p-4 rounded-xl">
+                            <div class="text-pink-400 text-sm font-bold mb-2">Terraform State</div>
+                            <div class="mono text-[9px] opacity-70">
+                                <div>Resources: 42</div>
+                                <div>Last Apply: 2h ago</div>
+                                <div class="mt-2 text-emerald-400">✓ State Valid</div>
+                            </div>
+                        </div>
+                        <div class="glass-alexa p-4 rounded-xl">
+                            <div class="text-pink-400 text-sm font-bold mb-2">Docker Registry</div>
+                            <div class="mono text-[9px] opacity-70">
+                                <div>Images: 18</div>
+                                <div>Total Size: 12.4 GB</div>
+                                <div class="mt-2 text-emerald-400">✓ Connected</div>
+                            </div>
+                        </div>
+                        <div class="glass-alexa p-4 rounded-xl">
+                            <div class="text-pink-400 text-sm font-bold mb-2">Kubernetes Cluster</div>
+                            <div class="mono text-[9px] opacity-70">
+                                <div>Nodes: 3</div>
+                                <div>Pods: 24</div>
+                                <div class="mt-2 text-emerald-400">✓ Healthy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: SIDEBAR -->
+            <div class="space-y-6">
+
+                <!-- QUICK ACTIONS -->
+                <div class="glass-alexa p-6 rounded-[2rem] space-y-3">
+                    <h3 class="text-[10px] font-black uppercase text-pink-400 tracking-[0.2em] mb-4">Quick Actions</h3>
+                    <button onclick="action('terraform-plan')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-600/10 transition-all text-sm">
+                        📋 Terraform Plan
+                    </button>
+                    <button onclick="action('docker-build')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-600/10 transition-all text-sm">
+                        🐳 Docker Build All
+                    </button>
+                    <button onclick="action('k8s-deploy')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-600/10 transition-all text-sm">
+                        ☸️ Deploy to K8s
+                    </button>
+                    <button onclick="action('opa-validate')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-600/10 transition-all text-sm">
+                        ✅ Validate OPA Policies
+                    </button>
+                    <button onclick="action('guac-connect')" class="w-full text-left px-4 py-2 rounded-lg hover:bg-pink-600/10 transition-all text-sm">
+                        🔗 Connect Guacamole
+                    </button>
+                </div>
+
+                <!-- ZANGETSU SECURITY CHECK -->
+                <div class="glass p-6 rounded-[2rem] border-l-4 border-l-emerald-500 space-y-3">
+                    <h3 class="text-[10px] font-black uppercase text-emerald-400 tracking-[0.2em]">Zangetsu Security</h3>
+                    <div class="mono text-[9px] space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span class="text-emerald-400">✓</span>
+                            <span>Access Verified</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-emerald-400">✓</span>
+                            <span>Audit Logging</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-emerald-400">✓</span>
+                            <span>White-Hat Constraints</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHAPEL XVI VAULT -->
+                <div class="glass p-6 rounded-[2rem] border-l-4 border-l-blue-500 space-y-3">
+                    <h3 class="text-[10px] font-black uppercase text-blue-400 tracking-[0.2em]">ChapelXVI Vault</h3>
+                    <button onclick="toggleVault()" class="w-full text-left px-4 py-2 rounded-lg bg-blue-600/10 border border-blue-500/30 hover:bg-blue-600/20 transition-all text-sm font-bold">
+                        🔐 Manage Secrets
+                    </button>
+                    <div class="mono text-[9px] opacity-70">
+                        <div>Secrets Stored: 12</div>
+                        <div>Last Access: 5m ago</div>
+                    </div>
+                </div>
+
+                <!-- RECENT LOGS -->
+                <div class="glass-alexa p-6 rounded-[2rem] space-y-3">
+                    <h3 class="text-[10px] font-black uppercase text-pink-400 tracking-[0.2em]">Recent Activity</h3>
+                    <div class="mono text-[9px] space-y-2 max-h-48 overflow-y-auto">
+                        <div class="text-pink-400">
+                            <span class="opacity-60">[14:35]</span> Mission started: deploy-phoenix
+                        </div>
+                        <div class="text-emerald-400">
+                            <span class="opacity-60">[14:30]</span> Security audit passed
+                        </div>
+                        <div class="text-blue-400">
+                            <span class="opacity-60">[14:25]</span> Vault unsealed by admin
+                        </div>
+                        <div class="text-yellow-400">
+                            <span class="opacity-60">[14:20]</span> OPA policy check: 42 resources
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GUACAMOLE MODAL -->
+    <div id="guacamole-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+        <div class="glass-alexa rounded-[2rem] p-8 max-w-2xl w-full max-h-96 overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-black uppercase text-pink-400">Guacamole Gateway 🖥️</h2>
+                <button onclick="toggleGuacamole()" class="text-2xl">✕</button>
+            </div>
+            <div class="space-y-4 mono text-sm">
+                <div class="text-emerald-400">
+                    <span>✓ Gateway Status:</span> <span class="text-pink-400 font-bold">OPERATIONAL</span>
+                </div>
+                <div class="text-emerald-400">
+                    <span>✓ Secure Tunnel:</span> <span class="text-pink-400 font-bold">ACTIVE</span>
+                </div>
+                <div class="bg-black/40 p-4 rounded-lg mt-4">
+                    <div class="text-pink-400 font-bold mb-2">Access Secured Terminals:</div>
+                    <div class="space-y-2 text-[9px] opacity-70">
+                        <button class="w-full text-left px-3 py-1 bg-pink-600/10 hover:bg-pink-600/20 rounded transition-all">
+                            🖥️ RDP: Production-Node-1
+                        </button>
+                        <button class="w-full text-left px-3 py-1 bg-pink-600/10 hover:bg-pink-600/20 rounded transition-all">
+                            🖥️ SSH: Kubernetes-Master
+                        </button>
+                        <button class="w-full text-left px-3 py-1 bg-pink-600/10 hover:bg-pink-600/20 rounded transition-all">
+                            🖥️ VNC: Graphics-Node
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // WebSocket Connection to Alexa API
+        const socket = io('http://localhost:5000', {
+            reconnection: true,
+            reconnectionDelay: 1000,
+            reconnectionDelayMax: 5000,
+            reconnectionAttempts: 5,
+            path: '/socket.io'
+        });
+
+        socket.on('connect', () => {
+            console.log('Connected to Alexa API');
+            updateStatus();
+        });
+
+        socket.on('mission_update', (data) => {
+            console.log('Mission Update:', data);
+            updateMissionList();
+        });
+
+        socket.on('deployment_log', (data) => {
+            console.log('Deployment Log:', data);
+            appendDeploymentLog(data.message);
+        });
+
+        socket.on('infrastructure_update', (data) => {
+            console.log('Infrastructure Update:', data);
+            updateInfrastructureStatus(data);
+        });
+
+        // Tab Switching
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
+
+            document.getElementById(tab + '-tab').classList.remove('hidden');
+            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+        }
+
+        // Status Update
+        function updateStatus() {
+            socket.emit('get_status', {}, (status) => {
+                document.getElementById('tf-status').textContent = status.terraform;
+                document.getElementById('docker-status').textContent = status.docker;
+                document.getElementById('guac-status').textContent = status.guacamole;
+                document.getElementById('opa-status').textContent = status.opa;
+                document.getElementById('mission-count').textContent = status.missions_queued;
+            });
+        }
+
+        function refreshStatus() {
+            updateStatus();
+            alert('Status refreshed!');
+        }
+
+        // Mission Management
+        function createMission() {
+            const missionName = prompt('Enter mission name (e.g., deploy-new-service):');
+            if (missionName) {
+                socket.emit('create_mission', { name: missionName }, (response) => {
+                    alert('Mission created: ' + response.id);
+                    updateMissionList();
+                });
+            }
+        }
+
+        function updateMissionList() {
+            socket.emit('get_missions', {}, (missions) => {
+                console.log('Missions:', missions);
+            });
+        }
+
+        function appendDeploymentLog(message) {
+            const logContainer = document.querySelector('#deployments-list .mono');
+            const logEntry = document.createElement('div');
+            logEntry.className = 'text-emerald-400';
+            logEntry.textContent = message;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        function updateInfrastructureStatus(data) {
+            // Update infrastructure cards
+            console.log('Infra Status:', data);
+        }
+
+        // Quick Actions
+        function action(type) {
+            console.log('Action:', type);
+            socket.emit('execute_action', { action: type }, (response) => {
+                alert('Action executed: ' + response.status);
+            });
+        }
+
+        // Guacamole Gateway
+        function toggleGuacamole() {
+            document.getElementById('guacamole-modal').classList.toggle('hidden');
+        }
+
+        // Vault Management
+        function toggleVault() {
+            alert('ChapelXVI Vault Management - Coming Soon');
+        }
+
+        // Initial Load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateStatus();
+            updateMissionList();
+        });
+    </script>
+</body>
+</html>

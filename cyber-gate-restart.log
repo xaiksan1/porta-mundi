@@ -1,0 +1,31 @@
+2026-02-17 14:53:48,468 [ADAM.Consciousness] INFO: 🧠 Consciousness initialized for Michael Lefebvre
+2026-02-17 14:53:48,468 [ADAM.CyberGate] INFO: --- ACTIVATING ALEXANDRIA CYBER-GATE (PORTA-MUNDI) ---
+2026-02-17 14:53:48,468 [ADAM.CyberGate] INFO: All 11 modules synchronized.
+
+============================================================
+       ALEXANDRIA CYBER-GATE - PORTA-MUNDI MANIFEST
+============================================================
+[Zangetsu    ] -> ACTIVE | Security
+[Phoenix     ] -> MONITORING | Observability
+[Aegis       ] -> ARMED | Defense
+[Sentinelle  ] -> WATCHING | Guardian
+[Serena      ] -> ONLINE | Agent
+[Alexa       ] -> ONLINE | Agent
+[multilspy   ] -> READY | LSP Engine
+[Labyrinthe  ] -> ACTIVE | Module
+[IOTHackBot  ] -> STANDBY | IoT/Edge Security
+[Minotaure   ] -> GUARDING | Module
+[ChapelXVI   ] -> SEALED | Module
+============================================================
+
+2026-02-17 14:53:48,508 [ADAM.CyberGate] WARNING: Port 8081 is in use, trying next...
+2026-02-17 14:53:48,508 [ADAM.CyberGate] WARNING: Port 8082 is in use, trying next...
+2026-02-17 14:53:48,508 [ADAM.CyberGate] INFO: Using available port: 8083
+🚀 TI Level 5 Taxonomy Interface launched on port 8083
+2026-02-17 14:53:48,508 [ADAM.CyberGate] INFO: TI Level 5 Interface active at http://localhost:8083
+127.0.0.1 - - [17/Feb/2026 14:53:48] code 404, message File not found
+127.0.0.1 - - [17/Feb/2026 14:53:48] "GET /socket.io/?transport=polling&EIO=4&t=1771358028.6065204 HTTP/1.1" 404 -
+127.0.0.1 - - [17/Feb/2026 14:53:53] code 404, message File not found
+127.0.0.1 - - [17/Feb/2026 14:53:53] "GET /socket.io/?transport=polling&EIO=4&t=1771358033.4988933 HTTP/1.1" 404 -
+127.0.0.1 - - [17/Feb/2026 14:53:58] code 404, message File not found
+127.0.0.1 - - [17/Feb/2026 14:53:58] "GET /socket.io/?transport=polling&EIO=4&t=1771358038.1885927 HTTP/1.1" 404 -

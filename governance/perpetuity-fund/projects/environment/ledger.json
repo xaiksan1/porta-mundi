@@ -1,0 +1,14 @@
+{
+  "sector": "environment",
+  "name": "Environmental Restoration",
+  "total_allocated": 2.5,
+  "distributions": [
+    {
+      "date": "2026-02-06",
+      "amount_egn": 2.5,
+      "timestamp": "2026-02-06T17:35:14.569076Z"
+    }
+  ],
+  "initiatives": [],
+  "impact": {}
+}

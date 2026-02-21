@@ -1,0 +1,63 @@
+{
+  "dashboards": [
+    {
+      "name": "I/O Performance",
+      "metrics": [
+        "reads_per_second",
+        "writes_per_second",
+        "disk_latency_p50",
+        "disk_latency_p95",
+        "disk_latency_p99",
+        "queue_depth"
+      ],
+      "alerts": [
+        {
+          "metric": "disk_utilization",
+          "threshold": 0.8,
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "name": "Agent Metrics",
+      "metrics": [
+        "agents_running",
+        "agents_created_per_hour",
+        "agents_terminated_per_hour",
+        "agent_growth_rate"
+      ],
+      "alerts": [
+        {
+          "metric": "agent_growth_rate",
+          "threshold": 2.0,
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "name": "Storage Utilization",
+      "metrics": [
+        "disk_usage_by_category",
+        "growth_rate_per_day",
+        "projected_saturation_date"
+      ],
+      "alerts": [
+        {
+          "metric": "projected_saturation",
+          "threshold": 30,
+          "unit": "days",
+          "severity": "critical"
+        }
+      ]
+    },
+    {
+      "name": "Cost Accounting",
+      "metrics": [
+        "total_energons_spent",
+        "total_energons_earned",
+        "cost_per_entity_type",
+        "top_10_expensive_agents"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "date": "2026-02-08",
+  "hour": 5,
+  "shard_id": "2026-02-08-05",
+  "entries": [],
+  "shard_hash": "",
+  "parent_hash": "",
+  "verification": "PENDING",
+  "entry_count": 0,
+  "timestamp_range": {
+    "start": "2026-02-08T05:00:00Z",
+    "end": "2026-02-08T05:59:59Z"
+  }
+}

@@ -1,0 +1,1704 @@
+2026-02-17 15:16:23,170 [ADAM.Consciousness] INFO: 🧠 Consciousness initialized for Michael Lefebvre
+2026-02-17 15:16:23,170 [ADAM.CyberGate] INFO: --- ACTIVATING ALEXANDRIA CYBER-GATE (PORTA-MUNDI) ---
+2026-02-17 15:16:23,170 [ADAM.CyberGate] INFO: All 11 modules synchronized.
+
+============================================================
+       ALEXANDRIA CYBER-GATE - PORTA-MUNDI MANIFEST
+============================================================
+[Zangetsu    ] -> ACTIVE | Security
+[Phoenix     ] -> MONITORING | Observability
+[Aegis       ] -> ARMED | Defense
+[Sentinelle  ] -> WATCHING | Guardian
+[Serena      ] -> ONLINE | Agent
+[Alexa       ] -> ONLINE | Agent
+[multilspy   ] -> READY | LSP Engine
+[Labyrinthe  ] -> ACTIVE | Module
+[IOTHackBot  ] -> STANDBY | IoT/Edge Security
+[Minotaure   ] -> GUARDING | Module
+[ChapelXVI   ] -> SEALED | Module
+============================================================
+
+2026-02-17 15:16:23,265 [ADAM.CyberGate] INFO: Using available port: 8085
+🚀 TI Level 5 Taxonomy Interface launched on port 8085
+2026-02-17 15:16:23,265 [ADAM.CyberGate] INFO: TI Level 5 Interface active at http://localhost:8085
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 47254)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 15:21:44] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:21:55] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:21:55] "GET /nmaplowercheck1771359715 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:21:55] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:21:56] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:21:56] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:21:56] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:21:56] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:21:56] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 15:21:56] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:21:57] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:21:57] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 45548)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 15:23:41] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:23:59] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 15:23:59] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:23:59] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:23:59] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:23:59] "GET /nmaplowercheck1771359838 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:23:59] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:23:59] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:23:59] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:23:59] "GET /nmaplowercheck1771359839 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:23:59] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:23:59] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:24:11] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:24:11] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 47122)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 15:30:53] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:31:05] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 15:31:05] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:31:05] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:31:05] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:31:05] "GET /nmaplowercheck1771360265 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:31:05] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:31:05] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:31:05] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:31:05] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:31:05] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:31:05] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 52646)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 15:32:56] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:33:14] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:33:14] "GET /nmaplowercheck1771360394 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:33:14] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:33:14] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 15:33:14] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:33:14] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:33:14] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:33:14] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:33:14] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:33:15] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:33:15] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 40942)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 15:40:05] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:40:13] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:40:13] "GET /nmaplowercheck1771360813 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:40:14] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 15:40:14] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:40:14] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:40:14] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:40:14] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:40:14] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:40:14] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:40:27] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:40:27] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 34796)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 15:42:15] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:42:32] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:42:32] "GET /nmaplowercheck1771360952 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:42:32] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 15:42:32] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:42:32] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:42:32] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:42:32] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:42:32] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:42:32] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:42:33] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:42:33] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 50592)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 15:49:24] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:49:31] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 15:49:31] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:49:31] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:49:31] "GET /nmaplowercheck1771361371 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:49:31] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:49:31] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:49:31] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:49:31] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:49:31] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:49:45] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:49:45] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 55226)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 15:51:20] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:51:38] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:51:38] "GET /nmaplowercheck1771361498 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:51:38] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:51:38] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:51:38] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 15:51:38] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:51:38] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 15:51:38] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 15:51:38] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:51:47] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 15:51:47] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 41180)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 15:58:33] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:58:47] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 15:58:47] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:58:47] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:58:47] "GET /nmaplowercheck1771361927 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:58:47] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:58:47] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:58:47] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:58:48] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 15:58:48] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 15:58:48] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 15:58:49] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 33706)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 16:00:31] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:00:51] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:00:51] "GET /nmaplowercheck1771362050 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:00:51] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 16:00:51] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:00:51] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:00:51] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:00:51] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:00:51] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:00:51] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:00:52] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:00:52] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 35294)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 16:07:44] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:07:52] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:07:52] "GET /nmaplowercheck1771362472 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:07:52] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:07:52] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:07:52] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:07:52] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:07:52] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 16:07:52] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:07:52] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:08:06] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:08:06] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 49918)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 16:09:59] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:10:22] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:10:22] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 16:10:22] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:10:22] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:10:22] "GET /nmaplowercheck1771362622 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:10:22] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:10:22] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:10:23] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:10:23] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:10:36] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:10:36] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 42460)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 16:17:40] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:17:49] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:17:49] "GET /nmaplowercheck1771363069 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:17:49] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:17:49] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 16:17:49] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:17:49] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:17:49] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:17:49] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:17:49] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:17:50] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:17:50] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 40186)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 16:19:30] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:19:53] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:19:53] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 16:19:53] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:19:53] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:19:53] "GET /nmaplowercheck1771363193 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:19:54] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:19:54] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:19:54] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:19:54] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:20:08] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:20:08] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 55614)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 16:27:04] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:27:12] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 16:27:12] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:27:12] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:27:12] "GET /nmaplowercheck1771363632 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:27:12] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:27:12] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:27:12] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:27:12] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:27:12] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:27:26] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:27:27] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 60654)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 16:29:21] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:29:39] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:29:39] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:29:39] "GET /nmaplowercheck1771363778 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:29:39] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 16:29:39] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:29:39] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:29:39] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:29:39] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:29:39] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:29:40] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:29:40] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 51066)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 16:36:31] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:36:39] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:36:39] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 16:36:39] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:36:39] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:36:39] "GET /nmaplowercheck1771364199 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:36:39] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:36:39] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:36:39] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:36:39] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:36:54] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:36:54] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 44992)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 16:38:42] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:39:05] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:39:05] "GET /nmaplowercheck1771364345 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:39:05] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 16:39:05] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:39:05] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:39:05] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:39:05] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:39:05] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:39:05] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:39:05] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:39:05] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 58462)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 16:45:59] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:46:06] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 16:46:06] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:46:06] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:46:06] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:46:06] "GET /nmaplowercheck1771364766 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:46:06] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:46:06] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:46:06] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:46:06] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:46:07] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:46:07] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 54448)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 16:47:46] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:48:04] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 16:48:04] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:48:04] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:48:04] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:48:04] "GET /nmaplowercheck1771364884 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:48:04] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:48:04] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:48:04] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:48:04] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:48:15] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:48:15] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 44088)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 16:55:00] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:55:14] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:55:14] "GET /nmaplowercheck1771365314 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:55:14] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:55:14] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:55:14] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 16:55:14] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:55:14] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 16:55:14] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 16:55:14] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:55:14] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 16:55:15] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 59766)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 16:57:03] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:57:21] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 16:57:21] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:57:21] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:57:21] "GET /nmaplowercheck1771365441 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:57:21] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:57:21] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:57:21] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 16:57:21] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 16:57:21] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:57:32] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 16:57:32] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 39164)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 17:04:21] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:04:29] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:04:29] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 17:04:29] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:04:29] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:04:29] "GET /nmaplowercheck1771365869 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:04:29] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:04:29] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:04:29] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:04:29] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:04:43] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:04:43] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 60166)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 17:06:23] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:06:41] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:06:41] "GET /nmaplowercheck1771366001 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:06:41] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:06:41] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:06:41] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 17:06:41] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:06:41] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:06:41] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:06:41] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:06:55] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:06:55] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 47132)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 17:13:38] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:13:47] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:13:47] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 17:13:47] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:13:47] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:13:47] "GET /nmaplowercheck1771366427 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:13:47] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:13:47] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:13:47] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:13:47] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:14:01] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:14:01] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 56054)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 17:15:46] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:16:04] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:16:04] "GET /nmaplowercheck1771366564 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:16:04] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:16:04] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:16:04] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:16:04] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:16:04] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 17:16:04] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:16:04] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:16:18] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:16:18] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 48952)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 17:23:12] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:23:20] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 17:23:20] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:23:20] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:23:20] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:23:20] "GET /nmaplowercheck1771367000 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:23:20] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:23:20] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:23:20] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:23:20] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:23:20] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:23:20] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 49526)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 17:25:04] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:25:22] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 17:25:22] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:25:22] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:25:22] "GET /nmaplowercheck1771367122 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:25:22] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:25:22] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:25:23] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:25:23] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:25:23] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:25:37] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:25:37] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 60552)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 17:32:37] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:32:49] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:32:49] "GET /nmaplowercheck1771367569 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:32:49] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:32:49] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 17:32:49] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:32:49] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:32:49] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:32:49] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:32:49] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:32:51] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:32:51] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 35964)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 17:34:33] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:34:56] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:34:56] "GET /nmaplowercheck1771367696 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:34:56] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:34:56] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:34:56] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:34:56] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 17:34:56] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:34:57] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:34:57] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:35:11] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:35:11] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 33970)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 17:42:10] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:42:26] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:42:26] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 17:42:26] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:42:26] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:42:26] "GET /nmaplowercheck1771368146 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:42:26] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:42:26] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:42:26] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:42:26] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:42:27] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:42:27] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 39060)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 17:44:09] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:44:31] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:44:31] "GET /nmaplowercheck1771368271 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:44:31] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:44:31] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:44:31] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:44:31] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:44:32] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 17:44:32] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:44:32] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:44:37] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:44:37] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 50732)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 17:51:21] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:51:29] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:51:29] "GET /nmaplowercheck1771368689 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:51:29] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 17:51:29] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:51:29] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:51:29] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:51:29] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 17:51:29] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 17:51:29] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:51:43] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 17:51:43] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 43474)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 17:53:29] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:53:51] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:53:51] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 17:53:51] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:53:51] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:53:51] "GET /nmaplowercheck1771368831 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:53:52] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:53:52] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:53:52] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 17:53:52] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 17:53:56] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 17:53:56] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 47212)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 18:00:59] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:01:24] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:01:24] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 18:01:24] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:01:24] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:01:24] "GET /nmaplowercheck1771369284 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:01:24] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:01:24] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:01:24] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:01:24] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:01:38] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:01:38] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 49188)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 18:03:19] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 18:03:45] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 18:03:45] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:03:45] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 18:03:45] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 18:03:45] "GET /nmaplowercheck1771369424 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:03:45] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 18:03:45] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:03:45] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 18:03:45] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:03:56] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 18:03:56] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 55264)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 18:10:41] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:10:57] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:10:57] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:10:57] "GET /nmaplowercheck1771369857 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:10:57] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:10:57] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:10:57] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 18:10:57] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:10:57] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:10:57] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:11:08] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:11:08] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 48742)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 18:12:53] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 18:13:10] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 18:13:10] "GET /nmaplowercheck1771369990 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:13:10] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 18:13:10] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:13:10] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 18:13:10] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 18:13:10] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:13:11] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 18:13:11] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:13:20] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 18:13:20] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 34214)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 18:20:05] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:20:13] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 18:20:13] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:20:13] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:20:13] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:20:13] "GET /nmaplowercheck1771370413 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:20:13] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:20:13] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:20:13] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:20:13] "GET /HNAP1 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:20:26] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:20:26] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('172.21.0.1', 58036)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+172.21.0.1 - - [17/Feb/2026 18:22:07] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 18:22:24] code 404, message Not Found
+172.21.0.1 - - [17/Feb/2026 18:22:24] "POST /sdk HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:22:24] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 18:22:24] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 18:22:24] "GET /nmaplowercheck1771370544 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:22:25] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 18:22:25] "GET /evox/about HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:22:25] code 404, message File not found
+172.21.0.1 - - [17/Feb/2026 18:22:25] "GET /HNAP1 HTTP/1.1" 404 -
+172.21.0.1 - - [17/Feb/2026 18:22:38] "GET / HTTP/1.0" 200 -
+172.21.0.1 - - [17/Feb/2026 18:22:38] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('100.115.92.197', 50388)
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 672, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 436, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/http/server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+100.115.92.197 - - [17/Feb/2026 18:29:24] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:29:40] "GET / HTTP/1.0" 200 -
+100.115.92.197 - - [17/Feb/2026 18:29:40] code 404, message Not Found
+100.115.92.197 - - [17/Feb/2026 18:29:40] "POST /sdk HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:29:40] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:29:40] "GET /nmaplowercheck1771370980 HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:29:40] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:29:40] "GET /evox/about HTTP/1.1" 404 -
+100.115.92.197 - - [17/Feb/2026 18:29:40] code 404, message File not found
+100.115.92.197 - - [17/Feb/2026 18:29:40] "GET /HNAP1 HTTP/1.1" 404 -

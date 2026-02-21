@@ -1,0 +1,39 @@
+{
+  "date": "2026-02-07",
+  "total_revenue": 100,
+  "total_costs": 50,
+  "net_profit": 50,
+  "perpetuity_allocation": 12.5,
+  "sectors": {
+    "education": {
+      "name": "Education & AI Ethics",
+      "percentage_of_perpetuity": 5,
+      "allocated_egn": 2.5,
+      "status": "pending_distribution"
+    },
+    "fauna": {
+      "name": "Wildlife & Biodiversity",
+      "percentage_of_perpetuity": 5,
+      "allocated_egn": 2.5,
+      "status": "pending_distribution"
+    },
+    "flora": {
+      "name": "Reforestation & Carbon",
+      "percentage_of_perpetuity": 5,
+      "allocated_egn": 2.5,
+      "status": "pending_distribution"
+    },
+    "environment": {
+      "name": "Environmental Restoration",
+      "percentage_of_perpetuity": 5,
+      "allocated_egn": 2.5,
+      "status": "pending_distribution"
+    },
+    "perpetuity_committee": {
+      "name": "Governance & Continuity",
+      "percentage_of_perpetuity": 5,
+      "allocated_egn": 2.5,
+      "status": "pending_distribution"
+    }
+  }
+}

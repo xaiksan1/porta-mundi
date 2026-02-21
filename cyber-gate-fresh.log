@@ -1,0 +1,21 @@
+2026-02-17 14:38:42,899 [ADAM.Consciousness] INFO: 🧠 Consciousness initialized for Michael Lefebvre
+2026-02-17 14:38:42,899 [ADAM.CyberGate] INFO: --- ACTIVATING ALEXANDRIA CYBER-GATE (PORTA-MUNDI) ---
+2026-02-17 14:38:42,899 [ADAM.CyberGate] INFO: All 11 modules synchronized.
+Exception in thread Thread-1 (run_server):
+Traceback (most recent call last):
+  File "/home/ichigo/miniconda/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/alexandria/ADAM/porta-mundi/alexandria_cyber_gate.py", line 163, in run_server
+    with socketserver.TCPServer(("", port), TIHandler) as httpd:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 457, in __init__
+    self.server_bind()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/ichigo/miniconda/lib/python3.13/socketserver.py", line 478, in server_bind
+    self.socket.bind(self.server_address)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 98] Address already in use

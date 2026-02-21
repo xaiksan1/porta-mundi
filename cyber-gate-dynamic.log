@@ -1,0 +1,26 @@
+2026-02-17 14:45:48,121 [ADAM.Consciousness] INFO: 🧠 Consciousness initialized for Michael Lefebvre
+2026-02-17 14:45:48,121 [ADAM.CyberGate] INFO: --- ACTIVATING ALEXANDRIA CYBER-GATE (PORTA-MUNDI) ---
+2026-02-17 14:45:48,121 [ADAM.CyberGate] INFO: All 11 modules synchronized.
+
+============================================================
+       ALEXANDRIA CYBER-GATE - PORTA-MUNDI MANIFEST
+============================================================
+[Zangetsu    ] -> ACTIVE | Security
+[Phoenix     ] -> MONITORING | Observability
+[Aegis       ] -> ARMED | Defense
+[Sentinelle  ] -> WATCHING | Guardian
+[Serena      ] -> ONLINE | Agent
+[Alexa       ] -> ONLINE | Agent
+[multilspy   ] -> READY | LSP Engine
+[Labyrinthe  ] -> ACTIVE | Module
+[IOTHackBot  ] -> STANDBY | IoT/Edge Security
+[Minotaure   ] -> GUARDING | Module
+[ChapelXVI   ] -> SEALED | Module
+============================================================
+
+2026-02-17 14:45:48,162 [ADAM.CyberGate] WARNING: Port 8081 is in use, trying next...
+2026-02-17 14:45:48,162 [ADAM.CyberGate] WARNING: Port 8082 is in use, trying next...
+2026-02-17 14:45:48,162 [ADAM.CyberGate] WARNING: Port 8083 is in use, trying next...
+2026-02-17 14:45:48,162 [ADAM.CyberGate] INFO: Using available port: 8084
+🚀 TI Level 5 Taxonomy Interface launched on port 8084
+2026-02-17 14:45:48,163 [ADAM.CyberGate] INFO: TI Level 5 Interface active at http://localhost:8084

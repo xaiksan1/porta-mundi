@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>floatilla_extension</key>
+    <dict>
+        <key>version</key>
+        <string>1.0.0</string>
+        <key>name</key>
+        <string>FLOATILLA - Alexandria External Communication Network</string>
+        <key>description</key>
+        <string>He3-compatible playlist extension for FLOATILLA network management</string>
+        <key>format</key>
+        <string>He3 Playlist (.FLOATILLA)</string>
+        <key>type</key>
+        <string>network_playlist</string>
+        <key>status</key>
+        <string>OPERATIONAL</string>
+    </dict>
+
+    <key>playlists</key>
+    <array>
+        <dict>
+            <key>id</key>
+            <string>main_bridge_playlist</string>
+            <key>name</key>
+            <string>Guacamole-Porta-Mundi-ADAM Bridge</string>
+            <key>items</key>
+            <array>
+                <dict>
+                    <key>id</key>
+                    <string>guacamole_gateway_item</string>
+                    <key>name</key>
+                    <string>Guacamole Terminal Access</string>
+                    <key>type</key>
+                    <string>gateway</string>
+                    <key>url</key>
+                    <string>http://localhost/guacamole/</string>
+                    <key>port</key>
+                    <integer>8080</integer>
+                </dict>
+                <dict>
+                    <key>id</key>
+                    <string>porta_mundi_security_item</string>
+                    <key>name</key>
+                    <string>Porta-Mundi Security Gateway</string>
+                    <key>type</key>
+                    <string>security_layer</string>
+                    <key>endpoint</key>
+                    <string>porta-mundi-security</string>
+                    <key>port</key>
+                    <integer>6000</integer>
+                </dict>
+                <dict>
+                    <key>id</key>
+                    <string>adam_orchestration_item</string>
+                    <key>name</key>
+                    <string>ADAM Agent Orchestration</string>
+                    <key>type</key>
+                    <string>orchestration</string>
+                    <key>url</key>
+                    <string>http://localhost:5004</string>
+                    <key>port</key>
+                    <integer>5004</integer>
+                </dict>
+            </array>
+        </dict>
+
+        <dict>
+            <key>id</key>
+            <string>scouts_relay_playlist</string>
+            <key>name</key>
+            <string>Scout Relay Network</string>
+            <key>description</key>
+            <string>TODO: DEFINE SCOUT OUTPOST LOCATIONS - Financial Intelligence Squad Relays</string>
+            <key>items</key>
+            <array/>
+        </dict>
+    </array>
+
+    <key>network_nodes</key>
+    <dict>
+        <key>TODO_SCOUT_NASDAQ</key>
+        <dict>
+            <key>name</key>
+            <string>TODO: NASDAQ Scout</string>
+            <key>status</key>
+            <string>TODO_PLACEHOLDER_AWAITING_CONFIG</string>
+            <key>relay_target</key>
+            <string>central_agentic_node</string>
+        </dict>
+        <key>TODO_SCOUT_NYSE</key>
+        <dict>
+            <key>name</key>
+            <string>TODO: NYSE Scout</string>
+            <key>status</key>
+            <string>TODO_PLACEHOLDER_AWAITING_CONFIG</string>
+            <key>relay_target</key>
+            <string>central_agentic_node</string>
+        </dict>
+    </dict>
+
+    <key>metadata</key>
+    <dict>
+        <key>created</key>
+        <string>2026-02-07T00:00:00Z</string>
+        <key>last_modified</key>
+        <string>2026-02-07T00:00:00Z</string>
+        <key>author</key>
+        <string>Alexandria FLOATILLA System</string>
+        <key>compatibility</key>
+        <string>He3 Playlist Format</string>
+    </dict>
+
+    <key>TODO_SECTIONS</key>
+    <dict>
+        <key>IMMEDIATE_ACTIONS</key>
+        <array>
+            <string>Define scout outpost locations from central_agentic config</string>
+            <string>Implement relay protocol for scout-to-Porta-Mundi communication</string>
+            <string>Setup encryption and authentication for scout network</string>
+            <string>Configure financial intelligence squad with proper access levels</string>
+        </array>
+        <key>NEXT_PHASE</key>
+        <array>
+            <string>Add multi-region scout support</string>
+            <string>Implement scout health monitoring</string>
+            <string>Create dashboard for network visualization</string>
+            <string>Setup data aggregation from multiple scouts</string>
+        </array>
+    </dict>
+</dict>
+</plist>

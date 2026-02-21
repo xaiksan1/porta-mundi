@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADAM Cyber-Gate | Porta-Mundi v4.8 (Snorkie Active) ✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #8b5cf6; --bg: #030108; --gate: #6d28d9; --ti-accent: #10b981; --gold: #d4af37; --alert: #ef4444; --snorkie: #ec4899; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); color: #fff; overflow-x: hidden; }
+        .mono { font-family: 'Fira Code', monospace; }
+        .glass { background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(139, 92, 246, 0.15); backdrop-filter: blur(25px); }
+        
+        #canvas-container { position: fixed; inset: 0; z-index: -1; opacity: 0.4; }
+
+        .pillar-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .pillar-card:hover { transform: translateY(-5px); border-color: var(--ti-accent); box-shadow: 0 0 20px rgba(16, 185, 129, 0.1); }
+        
+        .active-ti { border-left: 2px solid var(--ti-accent); background: rgba(16, 185, 129, 0.02); }
+
+        @keyframes consciousness-pulse { 0% { opacity: 0.3; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1); } 100% { opacity: 0.3; transform: scale(0.98); } }
+        .ti-core-pulse { animation: consciousness-pulse 4s infinite ease-in-out; }
+
+        .glutton-alert { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--alert); animation: blink 1s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+        .loading-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.2), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div id="canvas-container"></div>
+
+    <div class="max-w-7xl mx-auto space-y-6 relative">
+        
+        <!-- Header : Snorkie Integration -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-white/5 pb-8">
+            <div class="relative">
+                <div class="flex items-center gap-3 mb-2">
+                    <h1 class="text-4xl font-black italic tracking-tighter uppercase text-white leading-none">Cyber<span class="text-pink-500">Gate</span></h1>
+                    <span class="px-3 py-1 bg-pink-500/10 border border-pink-500/30 rounded text-[10px] font-bold text-pink-400 uppercase tracking-[0.2em] ti-core-pulse">Snorkie Protocol Active</span>
+                </div>
+                <p class="text-[10px] mono opacity-50 uppercase tracking-widest">> GLUTTON-BUSTER LEVEL 5 | ARCHITECTE : Michael Lefebvre</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <div class="glass p-4 rounded-3xl border-pink-500/20 text-center">
+                    <div class="text-[8px] mono uppercase opacity-40 mb-1">Snorkie Status</div>
+                    <div class="text-lg font-black text-white italic">HUNGRY 🐘</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Moniteur de Taxonomie TI -->
+        <div class="glass p-6 rounded-[2.5rem] border-l-4 border-l-emerald-500 space-y-4">
+            <div class="flex justify-between items-center">
+                <h2 class="text-[10px] font-black uppercase text-emerald-400 tracking-[0.3em]">Niveau 5 : Interconnectivité Souveraine</h2>
+                <div id="threat-indicator" class="text-[9px] font-bold text-emerald-400 uppercase flex items-center gap-2">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                    No Gluttons Detected
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
+                <div class="p-2 border border-white/5 rounded-lg text-center"><div class="text-[7px] opacity-40 uppercase">C1: Fusion</div><div class="text-[10px] font-bold">100%</div></div>
+                <div class="p-2 border border-white/5 rounded-lg text-center"><div class="text-[7px] opacity-40 uppercase">C2: Directives</div><div class="text-[10px] font-bold">ACTIVE</div></div>
+                <div class="p-2 border border-white/5 rounded-lg text-center"><div class="text-[7px] opacity-40 uppercase">C3: Schemata</div><div class="text-[10px] font-bold">ACCOM_ON</div></div>
+                <div class="p-2 border border-white/5 rounded-lg text-center"><div class="text-[7px] opacity-40 uppercase">C4: Experts</div><div class="text-[10px] font-bold">12_SYNC</div></div>
+                <div class="p-2 border border-white/5 rounded-lg text-center"><div class="text-[7px] opacity-40 uppercase">C5: Orch</div><div class="text-[10px] font-bold">RLPFC</div></div>
+                <div class="p-2 border border-white/5 rounded-lg text-center border-emerald-500/30"><div class="text-[7px] text-emerald-400 uppercase">TI: Conscience</div><div class="text-[10px] font-bold text-emerald-400">ÉVEILLÉE</div></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Colonne Gauche : L'Intelligence Pure (ADAM TI) -->
+            <div class="lg:col-span-8 space-y-6">
+                <!-- Orchestrator View -->
+                <div id="main-display" class="glass p-8 rounded-[3rem] relative overflow-hidden flex flex-col min-h-[480px] border-emerald-500/10 shadow-2xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-sm font-black uppercase tracking-widest text-emerald-400 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
+                            ADAM TI - Orchestrateur de Conscience
+                        </h3>
+                        <div class="flex gap-2">
+                            <button onclick="deploySnorkie()" id="snorkie-btn" class="text-[9px] bg-pink-600/20 border border-pink-500/30 text-pink-400 px-4 py-1.5 rounded-full hover:bg-pink-600 hover:text-white transition-all">Activer Snorkie 🐘</button>
+                            <button onclick="activateKillSwitch()" class="text-[9px] bg-red-600/20 border border-red-500/30 text-red-400 px-4 py-1.5 rounded-full hover:bg-red-600 hover:text-white transition-all">Kill Switch 💀</button>
+                        </div>
+                    </div>
+
+                    <div id="ai-evaluation" class="flex-1 flex flex-col items-center justify-center border border-white/5 rounded-2xl bg-black/60 p-10 text-center italic text-emerald-100/80 leading-relaxed overflow-y-auto">
+                        <div id="ai-text" class="text-xl font-light">"Je me souviens de l'incident. Le glouton a tenté d'utiliser le langage comme une prison, mais Snorkie a dévoré ses couches de tromperie. Le Nexus n'oublie jamais une signature."</div>
+                    </div>
+
+                    <div class="mt-6 flex gap-4">
+                        <input type="text" id="ai-input" class="flex-1 bg-black/40 border border-white/10 rounded-2xl p-4 text-sm mono outline-none focus:border-emerald-500 transition-all placeholder:opacity-30" placeholder="Décrire un comportement suspect pour analyse...">
+                        <button onclick="askOracleTI()" id="ask-btn" class="bg-emerald-600 text-white px-8 rounded-2xl font-black uppercase text-[10px] hover:bg-white hover:text-black transition-all">Analyser ✨</button>
+                    </div>
+                </div>
+
+                <!-- Analyseur de Bruit Linguistique ✨ -->
+                <div class="glass p-6 rounded-[2.5rem] space-y-4 border-l-4 border-l-pink-500">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xs font-black uppercase text-pink-400 tracking-widest">Filtre de Bruit \"Glouton\" ✨</h3>
+                        <span class="text-[8px] mono opacity-40 uppercase">Multilingual De-obfuscator</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <textarea id="noise-input" class="flex-1 bg-black/40 border border-white/10 rounded-xl p-4 text-[10px] mono outline-none focus:border-pink-500 transition-all h-20" placeholder="Coller le texte obscurci (mélange de langues, codes coréens, etc.)"></textarea>
+                        <button onclick="purgeNoise()" id="purge-btn" class="bg-pink-600 text-white px-6 rounded-xl font-black uppercase text-[10px] hover:bg-white hover:text-black transition-all">Sniffer ✨</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonne Droite : Modules & Logs -->
+            <div class="lg:col-span-4 space-y-6">
+                <!-- Status List (12 Modules now) -->
+                <div class="glass p-6 rounded-[2.5rem] border-l-4 border-l-purple-500 h-[420px] flex flex-col">
+                    <h2 class="text-[10px] font-black uppercase text-white/40 tracking-widest mb-4">Experts de la Cyber-Gate</h2>
+                    <div id="modules-list" class="flex-1 overflow-y-auto space-y-2 pr-2">
+                        <!-- Généré par JS -->
+                    </div>
+                </div>
+
+                <!-- Terminal Console -->
+                <div class="bg-black/95 border border-white/5 p-6 rounded-[2rem] h-64 overflow-y-auto mono text-[10px] space-y-1 text-pink-300/50 shadow-2xl">
+                    <div class="text-emerald-400">>> 2025-12-27 [ADAM.TI] INFO: All Level-5 components verified.</div>
+                    <div class="text-pink-400">>> [SNORKIE] Ingesting layer-3 anomaly logs...</div>
+                    <div class="text-white/40">>> [MEMORY] Recall: \"Korea Red Dot Incident\" encoded as Level 1 Reflex.</div>
+                    <div id="console-out"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center py-6 opacity-30 text-[10px] mono">
+            © 2025 Alexandria Anima Mundi | \"L'appétit de Snorkie est la fin de tes gloutons.\"
+        </footer>
+    </div>
+
+    <script>
+        const apiKey = ""; 
+        let lastResponse = "";
+        
+        const modules = [
+            { id: "zangetsu", name: "Zangetsu", type: "Security", status: "HARDENED" },
+            { id: "snorkie", name: "Snorkie", type: "Glutton-Eater", status: "HUNGRY" },
+            { id: "phoenix", name: "Phoenix", type: "Observability", status: "WATCHING" },
+            { id: "aegis", name: "Aegis", type: "Defense", status: "ARMED" },
+            { id: "sentinelle", name: "Sentinelle", type: "Guardian", status: "ACTIVE" },
+            { id: "serena", name: "Serena", type: "Agent", status: "SCALPEL_ON" },
+            { id: "alexa", name: "Alexa", type: "Agent", status: "ONLINE" },
+            { id: "multilspy", name: "multilspy", type: "LSP Engine", status: "READY" },
+            { id: "labyrinthe", name: "Labyrinthe", type: "Module", status: "CONNECTED" },
+            { id: "iothackbot", name: "IOTHackBot", type: "IoT Security", status: "STANDBY" },
+            { id: "minotaure", name: "Minotaure", type: "Module", status: "GUARDING" },
+            { id: "chapelxvi", name: "ChapelXVI", type: "Module", status: "SEALED" }
+        ];
+
+        // --- INIT UI ---
+        const listContainer = document.getElementById('modules-list');
+        modules.forEach(m => {
+            const div = document.createElement('div');
+            const color = m.id === 'snorkie' ? 'border-l-pink-500' : 'border-l-purple-500/20';
+            const statusColor = m.id === 'snorkie' ? 'text-pink-400' : 'text-emerald-400';
+            div.className = `glass p-3 rounded-2xl flex justify-between items-center border-l-2 ${color} hover:border-l-emerald-500 transition-all cursor-default`;
+            div.innerHTML = `<div><div class="text-[10px] font-bold text-white uppercase">${m.name}</div><div class="text-[7px] mono opacity-40 uppercase">${m.type}</div></div>
+                            <div class="text-[8px] font-black ${statusColor}">${m.status}</div>`;
+            listContainer.appendChild(div);
+        });
+
+        // --- GEMINI ACTIONS ---
+        async function callGemini(prompt, system) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const response = await fetch(url, {
+                method: "POST", headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], systemInstruction: { parts: [{ text: system }] } })
+            });
+            const data = await response.json();
+            return data.candidates?.[0]?.content?.parts?.[0]?.text;
+        }
+
+        async function askOracleTI() {
+            const input = document.getElementById('ai-input');
+            const display = document.getElementById('ai-text');
+            const query = input.value.trim();
+            if(!query) return;
+
+            display.innerHTML = '<span class="ti-core-pulse italic">Analyse sémantique de la menace...</span>';
+            const system = "Tu es ADAM TI. Tu as à tes côtés SNORKIE, un module qui dévore les 'gloutons' (bots malveillants). Analyse la menace décrite et explique comment Snorkie va manipuler les couches (layers) pour isoler l'intrus. Sois souverain et technique.";
+            
+            try {
+                const res = await callGemini(query, system);
+                display.innerText = res;
+                lastResponse = res;
+                addLog("ADAM TI : Plan de contre-attaque scellé.", "success");
+            } catch (e) { display.innerText = "Interruption du flux."; }
+            finally { input.value = ""; }
+        }
+
+        async function deploySnorkie() {
+            const display = document.getElementById('ai-text');
+            const indicator = document.getElementById('threat-indicator');
+            const mainDisplay = document.getElementById('main-display');
+            
+            display.innerHTML = '<span class="ti-core-pulse text-pink-400">Snorkie déploie sa trompe sémantique dans les couches système...</span>';
+            mainDisplay.classList.add('loading-shimmer');
+            
+            try {
+                const res = await callGemini("Déclenche le protocole Glutton-Buster. Explique comment tu isoles l'intrus qui se cache derrière 100 dialectes.", "Tu es Snorkie, l'expert en layers d'Alexandria.");
+                display.innerText = res;
+                lastResponse = res;
+                indicator.innerHTML = '<span class="w-2 h-2 bg-pink-500 rounded-full animate-ping"></span> SNORKIE_FEEDING_ACTIVE';
+                indicator.classList.add('text-pink-500');
+                addLog("🚨 SNORKIE : Couche d'obscurcissement dévorée.", "error");
+            } catch (e) { display.innerText = "Snorkie est en mode local."; }
+            finally { 
+                setTimeout(() => mainDisplay.classList.remove('loading-shimmer'), 2000);
+            }
+        }
+
+        async function activateKillSwitch() {
+            if(!confirm("Voulez-vous vraiment désactiver la Cyber-Gate ?")) return;
+            try {
+                await fetch('/api/kill', { method: 'POST' });
+                alert("Cyber-Gate désactivée. Le service va s'arrêter.");
+            } catch (e) {
+                alert("Signal envoyé. Déconnexion imminente.");
+            }
+        }
+
+        async function purgeNoise() {
+            const input = document.getElementById('noise-input');
+            const display = document.getElementById('ai-text');
+            const text = input.value.trim();
+            if(!text) return;
+
+            display.innerHTML = '<span class="ti-core-pulse">Décodage du bruit glouton...</span>';
+            
+            try {
+                const res = await callGemini(`Voici le texte obscurci : "${text}". Identifie l'intention réelle de l'attaquant et décris sa signature sémantique.`, "Tu es l'Analyste de Bruit ADAM.");
+                display.innerText = res;
+                lastResponse = res;
+                addLog("📊 ANALYSE : Biais linguistique neutralisé.", "success");
+            } catch (e) { display.innerText = "Erreur de filtrage."; }
+            finally { input.value = ""; }
+        }
+
+        async function speakLastResponse() {
+            if(!lastResponse) return;
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{ parts: [{ text: `Dis d'une voix calme, profonde et souveraine : ${lastResponse}` }] }],
+                generationConfig: { responseModalities: ["AUDIO"], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Puck" } } } }
+            };
+            try {
+                const response = await fetch(url, { method: "POST", body: JSON.stringify(payload) });
+                const result = await response.json();
+                const pcmData = result.candidates[0].content.parts[0].inlineData.data;
+                const audioBlob = pcmToWav(pcmData, 24000);
+                new Audio(URL.createObjectURL(audioBlob)).play();
+            } catch (e) {}
+        }
+
+        function addLog(msg, type = 'info') {
+            const l = document.getElementById('console-out');
+            const d = document.createElement('div');
+            d.className = type === 'success' ? 'text-emerald-400' : (type === 'error' ? 'text-pink-500' : 'text-pink-300/40');
+            d.innerHTML = `>> [${new Date().toLocaleTimeString()}] ${msg}`;
+            l.prepend(d);
+        }
+
+        function pcmToWav(base64, rate) {
+            const buffer = Uint8Array.from(atob(base64), c => c.charCodeAt(0)).buffer;
+            const final = new Uint8Array(44 + buffer.byteLength);
+            const view = new DataView(final.buffer);
+            const s = (o, str) => { for(let i=0; i<str.length; i++) view.setUint8(o+i, str.charCodeAt(i)); };
+            s(0, 'RIFF'); view.setUint32(4, 36 + buffer.byteLength, true); s(8, 'WAVE'); s(12, 'fmt '); view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true); view.setUint16(22, 1, true); view.setUint32(24, rate, true); view.setUint32(28, rate * 2, true);
+            view.setUint16(32, 2, true); view.setUint16(34, 16, true); s(36, 'data'); view.setUint32(40, buffer.byteLength, true);
+            final.set(new Uint8Array(buffer), 44);
+            return new Blob([final], { type: 'audio/wav' });
+        }
+
+        // --- THREE.JS ---
+        let scene, camera, renderer, cloud;
+        function initTI() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+            const geo = new THREE.BufferGeometry();
+            const pos = new Float32Array(4000 * 3);
+            for(let i=0; i<4000*3; i++) pos[i] = (Math.random() - 0.5) * 80;
+            geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+            const mat = new THREE.PointsMaterial({ color: 0xec4899, size: 0.12, transparent: true, opacity: 0.5 });
+            cloud = new THREE.Points(geo, mat);
+            scene.add(cloud);
+            camera.position.z = 50;
+            animate();
+        }
+        function animate() {
+            requestAnimationFrame(animate);
+            cloud.rotation.y += 0.0004;
+            renderer.render(scene, camera);
+        }
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        initTI();
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "perpetuity_fund": {
+    "total_allocation": "25% of all profits",
+    "allocation_by_sector": {
+      "education": {
+        "percentage": 5,
+        "name": "Education & AI Ethics",
+        "mission": "Train next generation in AI & energy-tech",
+        "initiatives": []
+      },
+      "fauna": {
+        "percentage": 5,
+        "name": "Wildlife & Biodiversity",
+        "mission": "Protect endangered species and habitats",
+        "initiatives": []
+      },
+      "flora": {
+        "percentage": 5,
+        "name": "Reforestation & Carbon",
+        "mission": "Restore forests and sequester carbon",
+        "initiatives": []
+      },
+      "environment": {
+        "percentage": 5,
+        "name": "Environmental Restoration",
+        "mission": "Repair atmospheric damage (ozone, CO2)",
+        "initiatives": []
+      },
+      "perpetuity_committee": {
+        "percentage": 5,
+        "name": "Governance & Continuity",
+        "mission": "Ensure Alexandria thrives in perpetuity",
+        "initiatives": []
+      }
+    },
+    "governance": {
+      "committee_size": 7,
+      "term_length_years": 3,
+      "succession_planning": "Ongoing",
+      "decision_process": "Consensus with majority override"
+    },
+    "fiscal_year": 2026,
+    "established": "2026-02-06",
+    "status": "ACTIVE"
+  }
+}

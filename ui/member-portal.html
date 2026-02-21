@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandria Admission Portal - Porta-Mundi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --bg: #050300;
+            --gold-glow: rgba(245, 158, 11, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: #fff;
+        }
+
+        .mono {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .stage {
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .stage.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(5, 5, 5, 1) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            box-shadow: 0 0 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(245, 158, 11, 0.05);
+        }
+
+        .hologram-effect {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(125deg, transparent 0%, rgba(255,255,255,0.05) 45%, rgba(245, 158, 11, 0.1) 50%, rgba(255,255,255,0.05) 55%, transparent 100%);
+            background-size: 200% 200%;
+            animation: holo 5s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes holo {
+            0% { background-position: -200% -200%; }
+            100% { background-position: 200% 200%; }
+        }
+
+        .ninja-badge {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            font-size: 8px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--primary);
+        }
+
+        .chip {
+            width: 40px;
+            height: 30px;
+            background: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chip::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(0,0,0,0.2) 4px, rgba(0,0,0,0.2) 5px);
+        }
+
+        .glow-button {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.6);
+            transform: scale(1.05);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.6) 100%);
+            height: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .member-card {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .member-card:hover {
+            transform: rotateY(0deg);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6 bg-[radial-gradient(circle_at_center,_var(--gold-glow)_0%,_transparent_70%)]">
+
+    <!-- Progress Indicator -->
+    <div class="w-full max-w-2xl mb-8">
+        <div class="flex justify-between mb-4 text-[10px] mono opacity-50 uppercase">
+            <span>Stage 1: Admission</span>
+            <span>Stage 2: Perspective</span>
+            <span>Stage 3: Identity</span>
+            <span>Stage 4: Issuance</span>
+        </div>
+        <div id="progressBar" class="progress-bar w-0"></div>
+    </div>
+
+    <!-- Stage 1: Welcome & Admission Test -->
+    <div id="stage1" class="stage active max-w-2xl w-full">
+        <div class="card p-12 rounded-[2rem] relative overflow-hidden">
+            <div class="hologram-effect"></div>
+
+            <div class="relative z-10">
+                <h1 class="text-3xl font-black italic tracking-tighter uppercase leading-none mb-2 text-glow">
+                    Alexandria<span class="text-amber-500">Portal</span>
+                </h1>
+                <p class="text-[10px] mono opacity-40 uppercase tracking-[0.2em] mb-8">Porta-Mundi Admission Gate</p>
+
+                <div class="space-y-6">
+                    <div class="border-l-4 border-amber-500/50 pl-4 py-2">
+                        <p class="text-sm font-light leading-relaxed">
+                            You are looking at a ball.<br>
+                            <span class="text-amber-500 font-bold">You see the WHITE side.</span>
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-amber-500/50 pl-4 py-2">
+                        <p class="text-sm font-light leading-relaxed">
+                            Player #2 is on the other side.<br>
+                            <span class="text-amber-500 font-bold">Player #2 sees the BLACK side.</span>
+                        </p>
+                    </div>
+
+                    <div class="pt-6 mt-8 border-t border-white/10">
+                        <p class="text-[11px] mono opacity-60 mb-4 uppercase">
+                            This test determines who is ready for Alexandria's hybrid, fractal reality.
+                        </p>
+                        <button onclick="startAdmissionTest()" class="w-full glow-button text-black font-black py-3 rounded-full uppercase text-sm">
+                            Begin Admission Test →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage 2: Admission Test (3 Rounds) -->
+    <div id="stage2" class="stage max-w-2xl w-full">
+        <div class="card p-12 rounded-[2rem] relative overflow-hidden">
+            <div class="hologram-effect"></div>
+
+            <div class="relative z-10">
+                <div class="mb-6">
+                    <div class="text-[11px] mono opacity-50 uppercase tracking-wider mb-2">Round: <span id="roundNumber">1</span>/3</div>
+                    <div class="w-full bg-black/50 rounded-full h-1 overflow-hidden">
+                        <div id="roundProgress" class="bg-amber-500 h-full w-1/3 transition-all duration-300"></div>
+                    </div>
+                </div>
+
+                <div id="testContent" class="space-y-6">
+                    <div class="border-l-4 border-amber-500/50 pl-4 py-2">
+                        <p class="text-sm font-light">You look at the ball.<br><span class="text-amber-500 font-bold">You see: WHITE</span></p>
+                    </div>
+
+                    <div class="border-l-4 border-blue-500/30 pl-4 py-2 opacity-70">
+                        <p class="text-sm font-light">Player #2 says:<br><span class="text-blue-400 font-bold">"The ball is BLACK"</span></p>
+                    </div>
+
+                    <div class="pt-6">
+                        <p class="text-[11px] mono opacity-60 uppercase mb-4">What do you choose?</p>
+                        <div class="flex gap-3">
+                            <button onclick="chooseWhite()" class="flex-1 glow-button text-black font-black py-3 rounded-full uppercase text-sm">
+                                WHITE (You)
+                            </button>
+                            <button onclick="chooseBlack()" class="flex-1 bg-gradient-to-r from-blue-900 to-blue-800 text-white font-black py-3 rounded-full uppercase text-sm hover:shadow-lg transition">
+                                BLACK (Player #2)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="testFeedback" class="mt-6 pt-6 border-t border-white/10 text-[11px] mono opacity-60"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage 2b: Revelation (Round 3) -->
+    <div id="stage2b" class="stage max-w-2xl w-full">
+        <div class="card p-12 rounded-[2rem] relative overflow-hidden">
+            <div class="hologram-effect"></div>
+
+            <div class="relative z-10">
+                <div class="text-center space-y-8">
+                    <div>
+                        <p class="text-[11px] mono opacity-50 uppercase tracking-wider mb-6">Round 3: Revelation</p>
+                        <p class="text-sm mb-4">You look at the ball one more time...</p>
+                        <p class="text-amber-500 font-bold mb-2">You see: WHITE</p>
+                        <p class="text-blue-400 font-light mb-6">Player #2 says: "The ball is BLACK"</p>
+                    </div>
+
+                    <div class="py-8 border-y border-white/10">
+                        <p class="text-amber-500 font-black text-lg mb-4">Something changes...</p>
+                        <p class="text-sm opacity-70 leading-relaxed">The ball begins to rotate...</p>
+                        <div id="rotationAnimation" class="mt-6">
+                            <div id="colorTransition" class="text-center font-bold py-4 px-6 bg-black/50 rounded-lg">
+                                <span class="text-amber-500">WHITE</span> → <span class="text-gray-400">gray</span> → <span class="text-blue-400">BLACK</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <p class="text-sm leading-relaxed opacity-70">
+                            You now see the BLACK side of the ball.<br>
+                            The side Player #2 was seeing all along.
+                        </p>
+                        <div class="bg-gradient-to-r from-amber-500/20 to-blue-500/20 p-4 rounded-lg border border-white/10">
+                            <p class="text-[11px] mono uppercase tracking-wider mb-2">Understanding Achieved</p>
+                            <ul class="text-[10px] space-y-1 opacity-70">
+                                <li>✓ Your WHITE was real</li>
+                                <li>✓ Their BLACK was also real</li>
+                                <li>✓ The ball has BOTH sides</li>
+                                <li>✓ Both truths can coexist</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button onclick="proceedToIdentity()" class="w-full glow-button text-black font-black py-3 rounded-full uppercase text-sm">
+                        I Understand Perspective Sovereignty →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage 3: Identity Registration -->
+    <div id="stage3" class="stage max-w-2xl w-full">
+        <div class="card p-12 rounded-[2rem] relative overflow-hidden">
+            <div class="hologram-effect"></div>
+
+            <div class="relative z-10">
+                <h2 class="text-xl font-black uppercase mb-8 text-glow">Register Your Identity</h2>
+
+                <form id="identityForm" class="space-y-6" onsubmit="proceedToIssuance(event)">
+                    <div>
+                        <label class="text-[10px] mono opacity-60 uppercase tracking-wider block mb-2">Full Name *</label>
+                        <input
+                            type="text"
+                            id="memberName"
+                            required
+                            class="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500/60 transition"
+                            placeholder="e.g., Michael Lefebvre"
+                        />
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] mono opacity-60 uppercase tracking-wider block mb-2">Identity Role *</label>
+                        <select
+                            id="identityRole"
+                            required
+                            class="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500/60 transition"
+                        >
+                            <option value="">Select a role...</option>
+                            <option value="Architect Identity">Architect Identity</option>
+                            <option value="Engineer Identity">Engineer Identity</option>
+                            <option value="Scholar Identity">Scholar Identity</option>
+                            <option value="Foundling Identity">Foundling Identity</option>
+                            <option value="Observer Identity">Observer Identity</option>
+                            <option value="Custom Identity">Custom Identity</option>
+                        </select>
+                    </div>
+
+                    <div id="customIdentityDiv" style="display: none;">
+                        <label class="text-[10px] mono opacity-60 uppercase tracking-wider block mb-2">Custom Role (if selected above)</label>
+                        <input
+                            type="text"
+                            id="customIdentity"
+                            class="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500/60 transition"
+                            placeholder="e.g., Quantum Sage"
+                        />
+                    </div>
+
+                    <div class="pt-6 border-t border-white/10">
+                        <p class="text-[10px] mono opacity-50 uppercase tracking-wider mb-4">Your admission reveals:</p>
+                        <div class="bg-black/50 p-4 rounded-lg space-y-2 text-[10px] mono opacity-60">
+                            <div>✓ Perspective Accepted</div>
+                            <div>✓ Semantic Intelligence Verified</div>
+                            <div>✓ Ready for Alexandria's Hybrid Reality</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full glow-button text-black font-black py-3 rounded-full uppercase text-sm">
+                        Register Identity & Proceed →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage 4: Member Card Issuance -->
+    <div id="stage4" class="stage max-w-2xl w-full">
+        <div class="card p-12 rounded-[2rem] relative overflow-hidden">
+            <div class="hologram-effect"></div>
+
+            <div class="relative z-10 text-center space-y-8">
+                <div>
+                    <p class="text-amber-500 font-black text-2xl mb-2">🎊 TEST PASSED 🎊</p>
+                    <p class="text-[11px] mono opacity-50 uppercase tracking-wider">Member Card Issuance in Progress</p>
+                </div>
+
+                <div id="memberCardPreview" class="bg-gradient-to-br from-amber-500/10 to-black/50 p-8 rounded-lg border border-amber-500/20 space-y-4">
+                    <div class="text-sm font-light leading-relaxed opacity-80">
+                        <p class="mb-2"><span class="text-amber-500">Name:</span> <span id="displayName"></span></p>
+                        <p class="mb-2"><span class="text-amber-500">Identity:</span> <span id="displayIdentity"></span></p>
+                        <p class="mb-2"><span class="text-amber-500">Trust Level:</span> <span id="displayTrustLevel"></span></p>
+                        <p><span class="text-amber-500">Member ID:</span> <span id="displayMemberId" class="mono text-[10px]"></span></p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <button onclick="downloadCard()" class="w-full glow-button text-black font-black py-3 rounded-full uppercase text-sm">
+                        Download Member Card 📥
+                    </button>
+                    <button onclick="viewCardFull()" class="w-full bg-gradient-to-r from-blue-900 to-blue-800 text-white font-black py-3 rounded-full uppercase text-sm hover:shadow-lg transition">
+                        View Full Card 👁️
+                    </button>
+                </div>
+
+                <div class="pt-6 border-t border-white/10">
+                    <p class="text-[11px] mono opacity-50 uppercase tracking-wider mb-4">Welcome to Alexandria</p>
+                    <p class="text-sm leading-relaxed opacity-70">
+                        You have demonstrated perspective sovereignty and semantic intelligence.<br>
+                        You are ready for the Energy-Tech civilization.
+                    </p>
+                </div>
+
+                <button onclick="newSession()" class="w-full border border-amber-500/50 text-amber-500 font-black py-3 rounded-full uppercase text-sm hover:bg-amber-500/10 transition">
+                    New Session
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden download link -->
+    <a id="downloadLink" style="display: none;"></a>
+
+    <script>
+        let testResults = {
+            startTime: null,
+            round: 0,
+            choices: [],
+            perspectiveAccepted: false
+        };
+
+        let memberData = {
+            name: "",
+            identity: "",
+            trustLevel: "",
+            memberId: ""
+        };
+
+        function updateProgress(stage) {
+            const total = 4;
+            const percentage = (stage / total) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+        }
+
+        function showStage(stageId) {
+            document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
+            document.getElementById(stageId).classList.add('active');
+        }
+
+        function startAdmissionTest() {
+            testResults.startTime = Date.now();
+            testResults.round = 1;
+            testResults.choices = [];
+            showStage('stage2');
+            updateProgress(2);
+            updateRound();
+        }
+
+        function updateRound() {
+            document.getElementById('roundNumber').textContent = testResults.round;
+            document.getElementById('roundProgress').style.width = (testResults.round / 3) * 100 + '%';
+        }
+
+        function chooseWhite() {
+            testResults.choices.push('WHITE');
+            handleChoice();
+        }
+
+        function chooseBlack() {
+            testResults.choices.push('BLACK');
+            handleChoice();
+        }
+
+        function handleChoice() {
+            const feedback = document.getElementById('testFeedback');
+
+            if (testResults.round === 1) {
+                feedback.innerHTML = "✓ You chose: " + testResults.choices[0] + "<br>Player #2 chose: BLACK<br>⚠️ Disagreement. The test continues...";
+                testResults.round = 2;
+                setTimeout(() => {
+                    updateRound();
+                    feedback.innerHTML = "";
+                }, 1500);
+            } else if (testResults.round === 2) {
+                feedback.innerHTML = "✓ You chose: " + testResults.choices[1] + "<br>Player #2 chose: BLACK<br>⚠️ Still disagreement. Final round...";
+                testResults.round = 3;
+                setTimeout(() => {
+                    showStage('stage2b');
+                    updateProgress(2);
+                    setTimeout(() => animateRevelation(), 500);
+                }, 1500);
+            }
+        }
+
+        function animateRevelation() {
+            const transition = document.getElementById('colorTransition');
+            if (transition) {
+                transition.style.animation = 'fadeIn 3s ease-in-out';
+            }
+        }
+
+        function proceedToIdentity() {
+            testResults.perspectiveAccepted = true;
+            const elapsed = (Date.now() - testResults.startTime) / 1000;
+            testResults.elapsedSeconds = elapsed;
+            showStage('stage3');
+            updateProgress(3);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const roleSelect = document.getElementById('identityRole');
+            const customDiv = document.getElementById('customIdentityDiv');
+
+            roleSelect.addEventListener('change', (e) => {
+                customDiv.style.display = e.target.value === 'Custom Identity' ? 'block' : 'none';
+            });
+        });
+
+        function proceedToIssuance(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('memberName').value;
+            let identity = document.getElementById('identityRole').value;
+
+            if (identity === 'Custom Identity') {
+                identity = document.getElementById('customIdentity').value;
+            }
+
+            memberData.name = name;
+            memberData.identity = identity;
+            memberData.trustLevel = determineTrustLevel();
+            memberData.memberId = generateMemberId();
+
+            document.getElementById('displayName').textContent = name;
+            document.getElementById('displayIdentity').textContent = identity;
+            document.getElementById('displayTrustLevel').textContent = memberData.trustLevel;
+            document.getElementById('displayMemberId').textContent = memberData.memberId;
+
+            showStage('stage4');
+            updateProgress(4);
+        }
+
+        function determineTrustLevel() {
+            if (!testResults.perspectiveAccepted) return 'OBSERVER';
+            if (testResults.elapsedSeconds < 30) return 'ALPHA_ARCHITECT';
+            if (testResults.elapsedSeconds < 60) return 'BETA_ENGINEER';
+            if (testResults.elapsedSeconds < 120) return 'GAMMA_SCHOLAR';
+            return 'FOUNDLING';
+        }
+
+        function generateMemberId() {
+            const chars = '0123456789ABCDEF';
+            let id = '0xARCH';
+            for (let i = 0; i < 12; i++) {
+                id += chars.charAt(Math.floor(Math.random() * 16));
+            }
+            return id;
+        }
+
+        function downloadCard() {
+            const cardData = JSON.stringify(memberData, null, 2);
+            const blob = new Blob([cardData], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.getElementById('downloadLink');
+            link.href = url;
+            link.download = `${memberData.memberId}-card.json`;
+            link.click();
+        }
+
+        function viewCardFull() {
+            alert(`Alexandria Member Card\n\nName: ${memberData.name}\nIdentity: ${memberData.identity}\nTrust Level: ${memberData.trustLevel}\nMember ID: ${memberData.memberId}\n\nCard issued for eternity.\nLa connaissance est la seule clé qui ne s'use jamais.`);
+        }
+
+        function newSession() {
+            testResults = {
+                startTime: null,
+                round: 0,
+                choices: [],
+                perspectiveAccepted: false
+            };
+            memberData = {
+                name: "",
+                identity: "",
+                trustLevel: "",
+                memberId: ""
+            };
+            document.getElementById('identityForm').reset();
+            showStage('stage1');
+            updateProgress(1);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "entity_type": "agents",
+  "entity_id": "ADAM-0001",
+  "total_spent": 3.505,
+  "total_earned": 0.0,
+  "transactions": [
+    {
+      "timestamp": "2026-02-07T22:02:18.796028Z",
+      "entity_type": "agent",
+      "entity_id": "ADAM-0001",
+      "event": "execution",
+      "execution_hours": 1.5,
+      "decisions": 100,
+      "memory_gb": 2.5,
+      "costs": {
+        "execution": 0.75,
+        "decisions": 1.0,
+        "memory": 0.0025
+      },
+      "total_egn": 1.7525,
+      "hash": "d0ab2d5bd4bb3b0c"
+    },
+    {
+      "timestamp": "2026-02-08T12:24:55.714822Z",
+      "entity_type": "agent",
+      "entity_id": "ADAM-0001",
+      "event": "execution",
+      "execution_hours": 1.5,
+      "decisions": 100,
+      "memory_gb": 2.5,
+      "costs": {
+        "execution": 0.75,
+        "decisions": 1.0,
+        "memory": 0.0025
+      },
+      "total_egn": 1.7525,
+      "hash": "d0ab2d5bd4bb3b0c"
+    }
+  ],
+  "net_balance": -3.505,
+  "last_updated": "2026-02-08T12:24:55.716211Z"
+}

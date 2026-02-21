@@ -1,0 +1,409 @@
+version: '3.8'
+
+services:
+  # ============================================================================
+  # FOUNDATION LAYER - Core Infrastructure
+  # ============================================================================
+
+  redis:
+    image: redis:7-alpine
+    container_name: porta-mundi-redis
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}
+    command: redis-server --requirepass ${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}
+    volumes:
+      - redis_data:/data
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  timescaledb:
+    image: timescale/timescaledb:latest-pg15
+    container_name: porta-mundi-timescaledb
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-p0stgr3sSecureP@ssw0rd!}
+      POSTGRES_DB: alexandria
+    volumes:
+      - timescaledb_data:/var/lib/postgresql/data
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  vault:
+    image: hashicorp/vault:latest
+    container_name: porta-mundi-vault
+    ports:
+      - "8200:8200"
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: ${VAULT_ROOT_TOKEN:-root-token-12345}
+      VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8200
+    command: server -dev
+    volumes:
+      - vault_data:/vault/data
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8200/v1/sys/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ============================================================================
+  # SECURITY MODULE 1: AEGIS - Cryptographic Services (Port 7000)
+  # ============================================================================
+
+  aegis:
+    build:
+      context: /home/ichigo/alexandria/anima-mundi/defense/alexandria-core/aegis
+      dockerfile: Dockerfile
+    container_name: porta-mundi-aegis
+    ports:
+      - "7000:7000"
+    environment:
+      NODE_ENV: production
+      VAULT_ADDR: http://vault:8200
+      VAULT_TOKEN: ${VAULT_ROOT_TOKEN:-root-token-12345}
+      REDIS_URL: redis://:${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}@redis:6379/0
+      AEGIS_PORT: 7000
+      AEGIS_KEY_ALGORITHM: ed25519
+    depends_on:
+      vault:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:7000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # SECURITY MODULE 2 & 3: PHOENIX & AKER - Twin-Turbo Detection & Response
+  # ============================================================================
+
+  phoenix:
+    build:
+      context: /home/ichigo/alexandria/anima-mundi/defense/alexandria-core/phoenix
+      dockerfile: Dockerfile
+    container_name: porta-mundi-phoenix
+    ports:
+      - "8082:8080"
+    environment:
+      NODE_ENV: production
+      PHOENIX_PORT: 8080
+      VAULT_ADDR: http://vault:8200
+      VAULT_TOKEN: ${VAULT_ROOT_TOKEN:-root-token-12345}
+      REDIS_URL: redis://:${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}@redis:6379/1
+      AEGIS_URL: http://aegis:7000
+      ZANGETSU_URL: http://zangetsu:7500
+      PHOENIX_THREAT_THRESHOLD: 100
+      PHOENIX_DDOS_TRIGGER: 1000
+    depends_on:
+      aegis:
+        condition: service_healthy
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  aker:
+    build:
+      context: /home/ichigo/alexandria/anima-mundi/defense/alexandria-core/aker
+      dockerfile: Dockerfile
+    container_name: porta-mundi-aker
+    ports:
+      - "8888:8888"
+    environment:
+      NODE_ENV: production
+      AKER_PORT: 8888
+      VAULT_ADDR: http://vault:8200
+      VAULT_TOKEN: ${VAULT_ROOT_TOKEN:-root-token-12345}
+      REDIS_URL: redis://:${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}@redis:6379/2
+      AEGIS_URL: http://aegis:7000
+      ZANGETSU_URL: http://zangetsu:7500
+      AKER_ML_UPDATE_INTERVAL: 3600
+      AKER_RECOVERY_TIMEOUT: 300
+    depends_on:
+      aegis:
+        condition: service_healthy
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8888/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # SECURITY MODULE 4: ZANGETSU - AI Intelligence Core (Port 7500)
+  # ============================================================================
+
+  zangetsu:
+    build:
+      context: /home/ichigo/alexandria/anima-mundi/defense/alexandria-core/zangetsu
+      dockerfile: Dockerfile
+    container_name: porta-mundi-zangetsu
+    ports:
+      - "7500:7500"
+    environment:
+      NODE_ENV: production
+      ZANGETSU_PORT: 7500
+      VAULT_ADDR: http://vault:8200
+      VAULT_TOKEN: ${VAULT_ROOT_TOKEN:-root-token-12345}
+      REDIS_URL: redis://:${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}@redis:6379/3
+      PHOENIX_URL: http://phoenix:8080
+      AKER_URL: http://aker:8888
+      ZANGETSU_THREAT_DB_UPDATE: 3600
+    depends_on:
+      phoenix:
+        condition: service_healthy
+      aker:
+        condition: service_healthy
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:7500/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # SECURITY MODULE 5: SENTINELLE - Monitoring & Alerting (Port 9000)
+  # ============================================================================
+
+  sentinelle:
+    build:
+      context: /home/ichigo/alexandria/anima-mundi/defense/alexandria-core/sentinelle
+      dockerfile: Dockerfile
+    container_name: porta-mundi-sentinelle
+    ports:
+      - "9000:9000"
+    environment:
+      NODE_ENV: production
+      SENTINELLE_PORT: 9000
+      REDIS_URL: redis://:${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}@redis:6379/4
+      PROMETHEUS_URL: http://prometheus:9090
+      SENTINELLE_CHECK_INTERVAL: 1000
+      SENTINELLE_ALERT_LEVEL: HIGH
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:9000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # SECURITY MODULE 6: CHAPEL XVI - Audit Logging (Port 6000)
+  # ============================================================================
+
+  chapel-xvi:
+    build:
+      context: /home/ichigo/alexandria/anima-mundi/defense/alexandria-core/chapel-xvi
+      dockerfile: Dockerfile
+    container_name: porta-mundi-chapel-xvi
+    ports:
+      - "6001:6000"
+    environment:
+      NODE_ENV: production
+      CHAPEL_PORT: 6000
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-p0stgr3sSecureP@ssw0rd!}@timescaledb:5432/alexandria
+      REDIS_URL: redis://:${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}@redis:6379/5
+      CHAPEL_RETENTION_DAYS: 365
+      CHAPEL_IMMUTABLE: 'true'
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:6000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # SECURITY MODULE 7: PAINT-SHOP - Visualization & Analytics (Port 5000)
+  # ============================================================================
+
+  paint-shop:
+    build:
+      context: /home/ichigo/alexandria/anima-mundi/defense/alexandria-core/paint-shop
+      dockerfile: Dockerfile
+    container_name: porta-mundi-paint-shop
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      PAINT_PORT: 5000
+      PROMETHEUS_URL: http://prometheus:9090
+      CHAPEL_XVI_URL: http://chapel-xvi:6000
+      REDIS_URL: redis://:${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}@redis:6379/6
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # SECURITY MODULE 8: ALEXA - Adaptive Machine Learning (Port 8777)
+  # ============================================================================
+
+  alexa:
+    build:
+      context: /home/ichigo/alexandria/anima-mundi/defense/alexandria-core/alexa
+      dockerfile: Dockerfile
+    container_name: porta-mundi-alexa
+    ports:
+      - "8777:8777"
+    environment:
+      NODE_ENV: production
+      ALEXA_PORT: 8777
+      CHAPEL_XVI_URL: http://chapel-xvi:6000
+      AKER_URL: http://aker:8888
+      ZANGETSU_URL: http://zangetsu:7500
+      REDIS_URL: redis://:${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}@redis:6379/7
+      ALEXA_LEARNING_RATE: 0.01
+      ALEXA_UPDATE_FREQUENCY: 3600
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8777/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # SECURITY MODULE 9: KHEPER:NEXUS - Network Orchestration (Port 9999)
+  # ============================================================================
+
+  kheper-nexus:
+    build:
+      context: /home/ichigo/alexandria/anima-mundi/defense/alexandria-core/kheper-nexus
+      dockerfile: Dockerfile
+    container_name: porta-mundi-kheper-nexus
+    ports:
+      - "9999:9999"
+    environment:
+      NODE_ENV: production
+      KHEPER_PORT: 9999
+      REDIS_URL: redis://:${REDIS_PASSWORD:-s3cur3P@ssw0rdFor4lexandria!}@redis:6379/8
+      CHAPEL_XVI_URL: http://chapel-xvi:6000
+      PROMETHEUS_URL: http://prometheus:9090
+      ZANGETSU_CHECK_URL: http://zangetsu:7500/health
+      PHOENIX_CHECK_URL: http://phoenix:8080/health
+      AKER_CHECK_URL: http://aker:8888/health
+      AEGIS_CHECK_URL: http://aegis:7000/health
+      CHAPEL_XVI_CHECK_URL: http://chapel-xvi:6000/health
+      SENTINELLE_CHECK_URL: http://sentinelle:9000/health
+      PAINT_SHOP_CHECK_URL: http://paint-shop:5000/health
+      ALEXA_CHECK_URL: http://alexa:8777/health
+      KHEPER_HEARTBEAT_INTERVAL: 1000
+      KHEPER_HEARTBEAT_WINDOW: 50
+      KHEPER_DDOS_THRESHOLD: 100
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:9999/api/heartbeat"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # MONITORING & OBSERVABILITY
+  # ============================================================================
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: porta-mundi-prometheus-integrated
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./prometheus-integrated.yml:/etc/prometheus/prometheus.yml
+      - ./secrets:/etc/prometheus/secrets:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=30d'
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 5s
+      timeout: 3s
+      retries: 2
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: porta-mundi-grafana-integrated
+    ports:
+      - "3011:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: PortaMundi2026!
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+      GF_INSTALL_PLUGINS: 'grafana-piechart-panel,grafana-clock-panel'
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana-provisioning-integrated:/etc/grafana/provisioning
+    networks:
+      - porta-security
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  redis_data:
+    driver: local
+  timescaledb_data:
+    driver: local
+  vault_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+
+networks:
+  porta-security:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.29.0.0/16

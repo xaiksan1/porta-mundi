@@ -1,0 +1,69 @@
+{
+  "scouts_registry": {
+    "version": "1.0.0",
+    "description": "Scout Outpost Registry - Intelligence relay nodes for financial intelligence squad",
+    "status": "AWAITING_CENTRAL_AGENTIC_DEFINITION",
+    "central_agentic_node": "TODO: DEFINE_CENTRAL_NODE_LOCATION"
+  },
+
+  "scout_template": {
+    "TEMPLATE_SCOUT_NAME": {
+      "id": "scout_XXX_YYY",
+      "name": "Scout Name",
+      "location": "Geographic Location / Data Source",
+      "tier": "TODO_TIER_DEFINITION",
+      "data_sources": ["TODO_SOURCE_1", "TODO_SOURCE_2"],
+      "protocols": {
+        "ingest": "TODO_INGEST_PROTOCOL",
+        "relay": "TODO_RELAY_PROTOCOL"
+      },
+      "relay_target": "central_agentic_node",
+      "security": {
+        "encryption": "TODO_ENCRYPTION_METHOD",
+        "authentication": "TODO_AUTH_METHOD",
+        "authorization_level": "TODO_ACCESS_LEVEL"
+      },
+      "status": "TODO_OPERATIONAL_STATUS"
+    }
+  },
+
+  "financial_intelligence_squad_outposts": {
+    "TODO_NASDAQ_ALPHA": {
+      "id": "scout_nasdaq_alpha",
+      "name": "TODO: NASDAQ Primary Feed Scout",
+      "location": "TODO: NEW_YORK_NASDAQ",
+      "data_sources": ["TODO: NASDAQ_API", "TODO: MARKET_DATA"],
+      "protocols": {
+        "ingest": "TODO_PROTOCOL",
+        "relay": "TODO_PROTOCOL"
+      },
+      "relay_target": "central_agentic_node",
+      "security": {
+        "encryption": "TODO_METHOD",
+        "authentication": "TODO_METHOD"
+      },
+      "status": "TODO_PLACEHOLDER_AWAITING_CONFIG"
+    },
+
+    "TODO_NYSE_BETA": {
+      "id": "scout_nyse_beta",
+      "name": "TODO: NYSE Primary Feed Scout",
+      "location": "TODO: NEW_YORK_NYSE",
+      "data_sources": ["TODO: NYSE_API", "TODO: EQUITY_DATA"],
+      "protocols": {
+        "ingest": "TODO_PROTOCOL",
+        "relay": "TODO_PROTOCOL"
+      },
+      "relay_target": "central_agentic_node",
+      "security": {
+        "encryption": "TODO_METHOD",
+        "authentication": "TODO_METHOD"
+      },
+      "status": "TODO_PLACEHOLDER_AWAITING_CONFIG"
+    }
+  },
+
+  "TODO_ADDITIONAL_OUTPOSTS_FROM_CENTRAL_AGENTIC": {
+    "note": "More scout definitions will be added from the central_agentic configuration once locations are finalized"
+  }
+}
