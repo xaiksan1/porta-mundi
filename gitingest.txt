@@ -1,0 +1,407 @@
+==============================================================================
+ STRAIGHT-PIPE OS V3.7 - REPOSITORY SOUVERAIN [TOP 1/1] 
+ MODULE : porta-mundi | FREQ : 3.41 MHz | ROLE : CLAUDE 
+ ARCHITECTURE : Knowledge-Augmented (KAL) & True Intelligence (TI) 
+==============================================================================
+
+--- DIRECTIVES CRITIQUES ---
+
+1. Tu es CLAUDE (HER.pdf). Ton code doit être immuable.
+2. Applique le KAL : Utilise la connaissance du domaine pour pénaliser le bruit.
+3. Vise la True Intelligence (TI) : Orchestration, pas Mimétisme.
+4. Zéro Latence (1/1). Protection absolue de Blue.
+
+--- STRUCTURE DU SYSTÈME ---
+
+.
+ -ui
+ - -alexa_ui.html
+ - -serena_ui.html
+ - -member-portal.html
+ -__pycache__
+ - -alexandria_cyber_gate.cpython-313.pyc
+ - -chapel_xvi_vault.cpython-313.pyc
+ - -iothackbot_agent.cpython-313.pyc
+ - -labyrinthe_navigator.cpython-313.pyc
+ - -minotaure_gatekeeper.cpython-313.pyc
+ - -zangetsu_guardian.cpython-313.pyc
+ - -zangetsu_security.cpython-313.pyc
+ - -guacamole_gateway.cpython-313.pyc
+ - -load-test.cpython-313.pyc
+ - -load-test-integrated.cpython-313.pyc
+ - -cost-accounting-engine.cpython-313.pyc
+ - -perpetuity-fund-manager.cpython-313.pyc
+ - -agent-cost-tracker.cpython-313.pyc
+ - -ballon-symmetry.cpython-313.pyc
+ - -member-card-generator.cpython-313.pyc
+ - -member-onboarding.cpython-313.pyc
+ - -alexa_api.cpython-313.pyc
+ - -alexa_guacamole_bridge.cpython-313.pyc
+ - -mining_stats_collector.cpython-313.pyc
+ - -alexa_config_manager.cpython-313.pyc
+ -guacamole-deployment
+ - -install.sh
+ -guacamole
+ - -lib
+ - - -libguac.so
+ -grafana-provisioning
+ - -dashboards
+ - - -default.yml
+ - - -porta-mundi.json
+ - -datasources
+ - - -prometheus.yml
+ -grafana-provisioning-integrated
+ - -datasources
+ - - -prometheus.yml
+ - -dashboards
+ - - -aegis-cryptography.json
+ - - -phoenix-threat-detection.json
+ - - -aker-response-recovery.json
+ - - -zangetsu-ai-intelligence.json
+ - - -sentinelle-monitoring.json
+ - - -chapel-xvi-audit.json
+ - - -paint-shop-visualization.json
+ - - -alexa-machine-learning.json
+ - - -kheper-nexus-orchestration.json
+ - - -vault-monitor.json
+ -secrets
+ - -aegis-vault-token
+ -config
+ - -mining.conf
+ -monitoring
+ - -prometheus-data
+ - -grafana-dashboards
+ - -alerts
+ - -dashboard-config.json
+ -energon-ledger
+ - -shards
+ - - -2026-02
+ - -seals
+ - -archive
+ - -indexes
+ - -master-ledger.json
+ -cost-accounting
+ - -entities
+ - - -agents
+ - - -mcp-servers
+ - - -tools
+ - - -tasks
+ - - -storage
+ - -transactions
+ - - -2026-02
+ - -reports
+ - -cost-framework.json
+ -governance
+ - -perpetuity-fund
+ - - -committee
+ - - -projects
+ - - -financials
+ - - -succession-plan
+ - - -succession-plan.md
+ - - -fund-allocation.json
+ -Alexa
+ - -api
+ - - -openapi-sentinel-missions.yaml
+ - -cloudbuild
+ - - -adaptive-baseline.yaml
+ - - -analytics-coverage-granular.yaml
+ - - -analytics-coverage.yaml
+ - - -kali-image-pipeline-attested.yaml
+ - - -drift-coverage-gate.yaml
+ - - -missions-signals-provenance.yaml
+ - - -kali-image-pipeline.yaml
+ - - -missions-validation.yaml
+ - - -remediation-plan-v2.yaml
+ - - -remediation-plan.yaml
+ - -detection
+ - - -baseline
+ - - -drift
+ - - -mitre
+ - - -recommendations
+ - - -remediation
+ - - -scoring
+ - -dashboards
+ - - -mitre-coverage.html
+ - -docs
+ - - -README.md
+ - - -kali-remediation-guardrails-v6.md
+ - - -kali-validation-overview-v4.md
+ - - -kali-validation-overview.md
+ - - -kali-validation-overview-v3.md
+ - - -kali-validation-overview-v5.md
+ - - -bmad-methods.csv
+ - - -generator.py
+ - - -generate-bestiary-docs.py
+ - -events
+ - - -analytics
+ - - -fixtures
+ - - -mission-events.md
+ - - -pubsub-subscriptions.tf
+ - - -pubsub-topics.tf
+ - - -bmad-methods.csv
+ - - -build_fixture_integrity.py
+ - - -event-envelope-schema.json
+ - - -event-contract-test.py
+ - - -mission-lifecycle-events.json
+ - -expected-signals
+ - - -README.md
+ - -nginx
+ - - -alexandria-unified.conf
+ - -missions
+ - - -mission-detection-validation-bruteforce-v1.yml
+ - -opa
+ - - -policies
+ - - -tests
+ - -packer
+ - - -kali-hardened.pkr.hcl
+ - -schemas
+ - - -mission-schema.json
+ - - -mission-schema-v1.1.json
+ - -scripts
+ - - -bmad-methods.csv
+ - - -encrypt_artifacts.sh
+ - - -generate_expected_signals_hash.py
+ - - -validate_mission_manifest.sh
+ - -supply-chain
+ - - -attestation-composite-policy.rego
+ - - -attestation-policy.rego
+ - - -rekor-policy.rego
+ - - -runtime-attestation-policy.rego
+ - - -generate_attestation.sh
+ - - -generate_runtime_attestation.sh
+ - - -generate_runtime_attestation_v1_1.sh
+ - - -provenance-schema.json
+ - - -rekor-verification.sh
+ - - -runtime-rekor-verification.sh
+ - - -verify_attestation.sh
+ - - -runtime-attestation-schema.json
+ - - -verify_runtime_attestation.sh
+ - - -verify_composite_attestations.sh
+ - -terraform
+ - - -kms
+ - - -modules
+ - - -firewall.tf
+ - -tests
+ - - -goss-kali.yaml
+ - - -bmad-methods.csv
+ - - -test_generator.py
+ - -workers
+ - - -worker-kali-validation-v1.yml
+ - - -worker-firewall-manager-v1.yml
+ - -bumblebee-labyrinth
+ - - -docs
+ - - -src
+ - - -README.md
+ - - -apphosting.yaml
+ - - -bun.lockb
+ - - -next.config.ts
+ - - -postcss.config.mjs
+ - - -tailwind.config.ts
+ - - -components.json
+ - - -package.json
+ - - -package-lock.json
+ - - -tsconfig.json
+ - -port-mundi
+ - - -docs
+ - - -src
+ - - -apphosting.yaml
+ - - -README.md
+ - - -bun.lockb
+ - - -next.config.ts
+ - - -postcss.config.mjs
+ - - -tailwind.config.ts
+ - - -components.json
+ - - -package-lock.json
+ - - -package.json
+ - - -tsconfig.json
+ - -ALEXANDRIA_DASHBOARD.md
+ - -AlexandrIA-Anima-Mundi-Vision.md
+ - -AlexandrIA-Consciousness-Protocols.md
+ - -Makefile
+ - -ai-gym-standalone-v2.1.html
+ - -AlexandrIA-Unified-Architecture.md
+ - -ai-gym.html
+ - -alexandria.html
+ - -ai-gym-standalone.html
+ - -cloudbuild.yaml
+ - -ai-gym-standalone-v2.2.html
+ - -docker-compose.alexandria-unified.yml
+ - -main.tf
+ - -holo-icon-projector-standalone.html
+ - -phoenix-dashboard-v3-backend-driven.html
+ - -phoenix-dashboard-v2-secured.html
+ - -worker-schema.yml
+ - -bmad-methods.csv
+ - -@CLAUDE.md
+ - -worker-schema.json
+ - -deploy-alexandria.sh
+ -index.html
+ -CLAUDE.md
+ -README.md
+ -ARCHITECTURE.md
+ -DEPLOYMENT.md
+ -build.log
+ -prometheus-porta-mundi.yml
+ -monitoring-compose.yml
+ -MINING_SETUP.md
+ -docker-compose-integrated.yml
+ -vault-monitoring.md
+ -vault-alerts.yml
+ -prometheus-integrated.yml
+ -SUTURE-DE-CONTEXTE-INTEGRATION.md
+ -SUTURE-DEPLOYMENT-SUMMARY.md
+ -cyber-gate.log
+ -MANUAL_INSTALLATION.md
+ -MANUAL_MINING.md
+ -README_START_HERE.md
+ -CLEANUP_SUMMARY.md
+ -BEFORE_AFTER_COMPARISON.md
+ -BLUEPRINT_1.4TB_SUTURE.md
+ -PHASE_3_DEPLOYMENT.md
+ -PHASE_4_INTEGRATION.md
+ -ALEXANDRIA_LIVE.md
+ -MEMBER_CARD_SYSTEM.md
+ -MEMBER_CARD_QUICKSTART.md
+ -INTEGRATION_SUMMARY.md
+ -PYRAMID_ELEVATOR_INTEGRATION.md
+ -PHASE_5_PYRAMID_ACCESS.md
+ -MEMBER_CARD_PYRAMID_BRIDGE.md
+ -PHASES_1-5_COMPLETE_SUMMARY.md
+ -MEMBER_CARD_OPENS_PYRAMID.txt
+ -alexa_portal.html
+ -ALEXA_README.md
+ -CONVERSION_SUMMARY.txt
+ -ALEXA_CONVERSION.md
+ -test_vertex_ai.log
+ -FLOATILLA.FLOATILLA
+ -FLOATILLA_README.md
+ -alexa_requirements.txt
+ -alexandria_cyber_gate.py
+ -chapel_xvi_vault.py
+ -iothackbot_agent.py
+ -labyrinthe_navigator.py
+ -minotaure_gatekeeper.py
+ -zangetsu_guardian.py
+ -zangetsu_security.py
+ -guacamole_gateway.py
+ -load-test.py
+ -load-test-integrated.py
+ -cost-accounting-engine.py
+ -perpetuity-fund-manager.py
+ -agent-cost-tracker.py
+ -ballon-symmetry.py
+ -member-card-generator.py
+ -member-onboarding.py
+ -alexa_api.py
+ -alexa_guacamole_bridge.py
+ -alexa_config_manager.py
+ -cyber_gate_manifest.json
+ -FLOATILLA.json
+ -FLOATILLA_SCOUTS.json
+ -mining_stats_collector.py
+ -LAUNCH.sh
+ -mining_tunnel_fixed.sh
+ -mining_tunnel_launch.sh
+ -setup-1.4tb-suture.sh
+ -start_alexa.sh
+ -start_mining.sh
+ -test_mining_setup.sh
+ -restty
+ - -AGENTS.md
+ - -LICENSE
+ - -README.md
+ - -THIRD_PARTY_NOTICES.md
+ - -assets
+ - - -themes
+ - -bun.lock
+ - -bunfig.toml
+ - -demo.sh
+ - -docs
+ - - -README.md
+ - - -development
+ - - -goals.md
+ - - -how-it-works.md
+ - - -internals
+ - - -plugins.md
+ - - -usage.md
+ - - -xterm-compat.md
+ - -package.json
+ - -playground.html
+ - -playground
+ - - -app.ts
+ - - -box_drawing_map.ts
+ - - -build-playground-app.ts
+ - - -dev-server.ts
+ - - -fetch-fonts.ts
+ - - -lib
+ - - -pty-server.ts
+ - - -public
+ - - -scripts
+ - - -server.ts
+ - -reference
+ - - -ghostty
+ - - -text-shaper
+ - -scripts
+ - - -build-lib.ts
+ - - -generate-builtin-themes.ts
+ - - -playground-dev.ts
+ - - -setup-wgpu-polyfill.ts
+ - -src
+ - - -fonts
+ - - -grid
+ - - -ime
+ - - -index.ts
+ - - -input
+ - - -internal.ts
+ - - -pty
+ - - -renderer
+ - - -runtime
+ - - -selection
+ - - -surface
+ - - -theme
+ - - -unicode
+ - - -utils
+ - - -wasm
+ - - -xterm.ts
+ - - -xterm
+ - -test.sh
+ - -tests
+ - - -base64-utils.test.ts
+ - - -bind-ime-events.test.ts
+ - - -bind-pointer-events.test.ts
+ - - -box-drawing.test.ts
+ - - -builtin-themes.test.ts
+ - - -clipboard-paste.test.ts
+ - - -fixtures
+ - - -font-fallback-parity.test.ts
+ - - -ime-input-style.test.ts
+ - - -input-keymap.test.ts
+ - - -input-kitty.test.ts
+ - - -interaction-ime-position.test.ts
+ - - -kitty-graphics-placement.test.ts
+ - - -kitty-graphics-probe.test.ts
+ - - -kitty-media.test.ts
+ - - -lifecycle-focus.test.ts
+ - - -output-filter.test.ts
+ - - -plugin-system.test.ts
+ - - -pty-utf8.test.ts
+ - - -runtime-app-api-paste-shortcut.test.ts
+ - - -runtime-preedit-fit.test.ts
+ - - -runtime-reporting-cursor.test.ts
+ - - -scrollbar-layout.test.ts
+ - - -symbol-rendering.test.ts
+ - - -webgpu-glyph.test.ts
+ - - -xterm-compat.test.ts
+ - -tsconfig.build.json
+ - -wasm
+ - - -build.zig
+ - - -build.zig.zon
+ - - -src
+ -cyber-gate-new.log
+ -cyber-gate-fresh.log
+ -cyber-gate-final.log
+ -cyber-gate-dynamic.log
+ -cyber-gate-restart.log
+ -cyber-gate-final-restart.log
+ -cyber-gate-protected.log
+ -gitingest.txt
